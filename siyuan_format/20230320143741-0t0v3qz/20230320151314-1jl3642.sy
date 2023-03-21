@@ -1,0 +1,40 @@
+{
+	"ID": "20230320151314-1jl3642",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320151314-1jl3642",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151337-x778rgk\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151337-x778rgk\u0026quot;,\u0026quot;scrollTop\u0026quot;:53,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151337-x778rgk\u0026quot;,\u0026quot;focusStart\u0026quot;:3,\u0026quot;focusEnd\u0026quot;:3}",
+		"title": "Status XpropShape",
+		"updated": "20230320151337"
+	},
+	"Children": [
+		{
+			"ID": "20230320151337-x778rgk",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320151337-x778rgk",
+				"updated": "20230320151337"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "Status XpropShape(InferenceContext* ctx)\n{\n    int    K; TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(   \"K\",    \u0026K));\n    int axis; TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(\"axis\", \u0026axis));\n\n    // C ==\u003e K\n    ShapeHandle x = ctx-\u003einput(0);\n    int rank = ctx-\u003eRank(x);\n    //printf(\"XpropShape: %d\\n\", rank);\n    if (rank \u003e 0)\n    {\n        std::vector\u003cDimensionHandle\u003e shape;\n        shape.reserve(rank);\n        for (int i = 0; i \u003c rank; i++)\n            shape.push_back(i == axis ? ctx-\u003eMakeDim(K) : ctx-\u003eDim(x, i));\n\n        ctx-\u003eset_output(0, ctx-\u003eMakeShape(shape));\n    }\n    else\n        ctx-\u003eset_output(0, ctx-\u003eUnknownShape());\n    ctx-\u003eset_output(1, ctx-\u003eUnknownShape());\n    return Status::OK();\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

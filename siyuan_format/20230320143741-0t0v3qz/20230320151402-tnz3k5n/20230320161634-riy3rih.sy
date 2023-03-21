@@ -1,0 +1,39 @@
+{
+	"ID": "20230320161634-riy3rih",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320161634-riy3rih",
+		"title": "void Compute",
+		"updated": "20230320161702"
+	},
+	"Children": [
+		{
+			"ID": "20230320161634-m0swd6z",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320161634-m0swd6z",
+				"updated": "20230320161702"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "void Compute(OpKernelContext* ctx) override\n  {\n    const Tensor\u0026 dw = ctx-\u003einput(0);\n    const Tensor\u0026  w = ctx-\u003einput(1);\n    const Tensor\u0026  g = ctx-\u003einput(2);\n\n    uint blocks = dw.dim_size(0);\n    uint bsize  = dw.dim_size(1);\n\n    Tensor *dw_out;\n    Tensor *dg;\n    OP_REQUIRES_OK(ctx, ctx-\u003eallocate_output(0, dw.shape(), \u0026dw_out));\n    OP_REQUIRES_OK(ctx, ctx-\u003eallocate_output(1,  g.shape(), \u0026dg));\n\n    CUstream stream = ((CUDAStream*)ctx-\u003eop_device_context()-\u003estream()-\u003eimplementation())-\u003ecuda_stream();\n\n    BlocksparseGateGrad\u003cV\u003e(stream,\n      (V*)dw_out-\u003eflat\u003cT\u003e().data(),\n      dg-\u003eflat\u003cfloat\u003e().data(),\n      (const V*)dw.flat\u003cT\u003e().data(),\n      (const V*) w.flat\u003cT\u003e().data(),\n      g.flat\u003cfloat\u003e().data(),\n      blocks, bsize\n    );\n  }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

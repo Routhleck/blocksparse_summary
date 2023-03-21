@@ -1,0 +1,46 @@
+{
+	"ID": "20230320154316-xypof1q",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320154316-xypof1q",
+		"title": "cudaError_t BsmmGatedUpdat_CN",
+		"updated": "20230320154345"
+	},
+	"Children": [
+		{
+			"ID": "20230320154340-s7bu8bv",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320154340-s7bu8bv",
+				"updated": "20230320154340"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cCTYPE(T)\u003e\ncudaError_t BsmmGatedUpdat_CN(const T* X, const T* E, T* U, bsmm_params* params)\n{\n    dim3 grid(params-\u003eblocks, 1, 1);\n    int loops = CEIL_DIV(params-\u003eN, 64);\n\n    struct Plist\u003cT4,8\u003e* X4 = (struct Plist\u003cT4,8\u003e*)X;\n    struct Plist\u003cT4,8\u003e* E4 = (struct Plist\u003cT4,8\u003e*)E;\n    struct Plist\u003cT8,8\u003e* X8 = (struct Plist\u003cT8,8\u003e*)X;\n    struct Plist\u003cT8,8\u003e* E8 = (struct Plist\u003cT8,8\u003e*)E;\n\n    const int2* L2 = (const int2*)params-\u003eLut;\n            T2* U2 = (        T2*)U;\n\n    if (params-\u003ebsize == 8)\n    {\n        // If not accumulating zero out the buffer\n        if (params-\u003ebeta == 0.0f)\n            cuMemsetD8Async((CUdeviceptr)U, 0, params-\u003eblocks * 64 * sizeof(T), params-\u003estream);\n\n        if (sizeof(T) == 2 \u0026\u0026 (params-\u003eN \u0026 7) == 0)\n            gemm_blocksparse_gated_08x64x08x8_updat\u003cT8,T8,T2\u003e\u003c\u003c\u003cgrid,32,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, L2, params-\u003eGate, U2, params-\u003epcount*8, params-\u003eN, loops, params-\u003ealpha, params-\u003ebeta);\n        else\n            gemm_blocksparse_gated_08x64x08x4_updat\u003cT4,T4,T2\u003e\u003c\u003c\u003cgrid,32,0,params-\u003estream\u003e\u003e\u003e(*X4, *E4, L2, params-\u003eGate, U2, params-\u003epcount*8, params-\u003eN, loops, params-\u003ealpha, params-\u003ebeta);\n    }\n    return cudaPeekAtLastError();\n}\ntemplate cudaError_t BsmmGatedUpdat_CN\u003cVTYPE(float)\u003e(const float* X, const float* E, float* U, bsmm_params* params);\ntemplate cudaError_t BsmmGatedUpdat_CN\u003cVTYPE(ehalf)\u003e(const ehalf* X, const ehalf* E, ehalf* U, bsmm_params* params);\ntemplate cudaError_t BsmmGatedUpdat_CN\u003cVTYPE(bhalf)\u003e(const bhalf* X, const bhalf* E, bhalf* U, bsmm_params* params);\n\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320154345-ojqb3vh",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320154345-ojqb3vh"
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"ID": "20230320155407-1alxbfk",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320155407-1alxbfk",
+		"title": "bool BlocksparseFeatureReduceNC",
+		"updated": "20230320155509"
+	},
+	"Children": [
+		{
+			"ID": "20230320155509-5avrs1w",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320155509-5avrs1w",
+				"updated": "20230320155509"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "bool BlocksparseFeatureReduceNC(CUstream stream, ehalf* Y, const struct Plist\u003cehalf,8\u003e* X8, uint params, uint C, uint N, uint bshift, uint norm_type)\n{\n    uint gridC   = C \u003e\u003e bshift;\n    uint threads = params * 32;\n    if (bshift == 5)\n    {\n        dim3 grid(gridC, CEIL_DIV(N, 32), 1);\n        if (norm_type == MAX_NORM)\n            blocksparse_feature_reduce_nc\u003c32,32,MAX_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, N, C);\n        else\n            blocksparse_feature_reduce_nc\u003c32,32, L2_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, N, C);\n    }\n    else if (bshift == 6)\n    {\n        dim3 grid(gridC, CEIL_DIV(N, 16), 1);\n        if (norm_type == MAX_NORM)\n            blocksparse_feature_reduce_nc\u003c64,16,MAX_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, N, C);\n        else\n            blocksparse_feature_reduce_nc\u003c64,16, L2_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, N, C);\n    }\n    return true;\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

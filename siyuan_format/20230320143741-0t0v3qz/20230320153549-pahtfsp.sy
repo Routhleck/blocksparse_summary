@@ -1,0 +1,46 @@
+{
+	"ID": "20230320153549-pahtfsp",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320153549-pahtfsp",
+		"title": "cudaError_t BsmmXprop_CN",
+		"updated": "20230320153706"
+	},
+	"Children": [
+		{
+			"ID": "20230320153705-4lu84j2",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320153705-4lu84j2",
+				"updated": "20230320153705"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cbool Fprop, CTYPE(T)\u003e\ncudaError_t BsmmXprop_CN(const T* X, const T* W, T* Y, bsmm_params* params)\n{\n    dim3 grid(CEIL_DIV(params-\u003eN, 64), params-\u003esegments, 1);\n\n    const int2* L2 = (const int2*)params-\u003eLut;\n    const   T2* W2 = (const   T2*)W;\n    const   T4* W4 = (const   T4*)W;\n    const   T4* X4 = (const   T4*)X;\n    const   T8* X8 = (const   T8*)X;\n            T2* Y2 = (        T2*)Y;\n            T4* Y4 = (        T4*)Y;\n            T8* Y8 = (        T8*)Y;\n\n    if (params-\u003elocks \u003e 0)\n        cuMemsetD32Async((CUdeviceptr)params-\u003eLock, 0, grid.x * params-\u003elocks * 2, params-\u003estream);\n\n    if (params-\u003ebsize == 8)\n    {\n        if (sizeof(T) == 2 \u0026\u0026 (params-\u003eN \u0026 7) == 0)\n            gemm_blocksparse_08x64x08x8_xprop\u003cFprop,T2,T8,T8\u003e\u003c\u003c\u003cgrid,32,params-\u003eshared,params-\u003estream\u003e\u003e\u003e(L2, W2, X8, Y8, params-\u003eLock, params-\u003elocks, params-\u003eN\u003e\u003e3);\n        else\n            gemm_blocksparse_08x64x08x4_xprop\u003cFprop,T2,T4,T2\u003e\u003c\u003c\u003cgrid,32,params-\u003eshared,params-\u003estream\u003e\u003e\u003e(L2, W2, X4, Y2, params-\u003eLock, params-\u003elocks, params-\u003eN);\n    }\n    else if (params-\u003ebsize == 16)\n    {\n        if (sizeof(T) == 2 \u0026\u0026 (params-\u003eN \u0026 7) == 0)\n            gemm_blocksparse_16x64x16x8_xprop\u003cFprop,T4,T8,T8\u003e\u003c\u003c\u003cgrid,64,params-\u003eshared,params-\u003estream\u003e\u003e\u003e(L2, W4, X8, Y8, params-\u003eLock, params-\u003elocks, params-\u003eN\u003e\u003e3);\n        else\n            gemm_blocksparse_16x64x16x4_xprop\u003cFprop,T4,T4,T2\u003e\u003c\u003c\u003cgrid,64,params-\u003eshared,params-\u003estream\u003e\u003e\u003e(L2, W4, X4, Y2, params-\u003eLock, params-\u003elocks, params-\u003eN);\n    }\n    else\n    {\n        if (sizeof(T) == 2 \u0026\u0026 (params-\u003eN \u0026 7) == 0)\n            gemm_blocksparse_32x64x32x8_xprop\u003cFprop,T4,T8,T8\u003e\u003c\u003c\u003cgrid,128,params-\u003eshared,params-\u003estream\u003e\u003e\u003e(L2, W4, X8, Y8, params-\u003eLock, params-\u003elocks, params-\u003eN\u003e\u003e3);\n        else\n            gemm_blocksparse_32x64x32x4_xprop\u003cFprop,T4,T4,T4\u003e\u003c\u003c\u003cgrid,128,params-\u003eshared,params-\u003estream\u003e\u003e\u003e(L2, W4, X4, Y4, params-\u003eLock, params-\u003elocks, params-\u003eN\u003e\u003e2);\n    }\n    return cudaPeekAtLastError();\n}\ntemplate cudaError_t BsmmXprop_CN\u003ctrue,  VTYPE(float)\u003e(const float* X, const float* W, float* Y, bsmm_params* params);\ntemplate cudaError_t BsmmXprop_CN\u003ctrue,  VTYPE(ehalf)\u003e(const ehalf* X, const ehalf* W, ehalf* Y, bsmm_params* params);\ntemplate cudaError_t BsmmXprop_CN\u003ctrue,  VTYPE(bhalf)\u003e(const bhalf* X, const bhalf* W, bhalf* Y, bsmm_params* params);\n\ntemplate cudaError_t BsmmXprop_CN\u003cfalse, VTYPE(float)\u003e(const float* X, const float* W, float* Y, bsmm_params* params);\ntemplate cudaError_t BsmmXprop_CN\u003cfalse, VTYPE(ehalf)\u003e(const ehalf* X, const ehalf* W, ehalf* Y, bsmm_params* params);\ntemplate cudaError_t BsmmXprop_CN\u003cfalse, VTYPE(bhalf)\u003e(const bhalf* X, const bhalf* W, bhalf* Y, bsmm_params* params);\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320153706-tvmq681",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320153706-tvmq681"
+			}
+		}
+	]
+}

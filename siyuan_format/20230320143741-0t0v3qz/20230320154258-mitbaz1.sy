@@ -1,0 +1,39 @@
+{
+	"ID": "20230320154258-mitbaz1",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320154258-mitbaz1",
+		"title": "cudaError_t BsmmGatedXprop_CN",
+		"updated": "20230320154311"
+	},
+	"Children": [
+		{
+			"ID": "20230320154301-ow3jo4u",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320154301-ow3jo4u",
+				"updated": "20230320154303"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cbool Fprop, CTYPE(T)\u003e\ncudaError_t BsmmGatedXprop_CN(const T* X, const T* W, T* Y, bsmm_params* params)\n{\n    dim3 grid(CEIL_DIV(params-\u003eN, 64), params-\u003esegments, 1);\n\n    // printf(\"grid: %d %d\\n\", grid.x, grid.y);\n\n    const int2* L2 = (const int2*)params-\u003eLut;\n    const   T2* W2 = (const   T2*)W;\n    const   T4* X4 = (const   T4*)X;\n    const   T8* X8 = (const   T8*)X;\n            T2* Y2 = (        T2*)Y;\n            T8* Y8 = (        T8*)Y;\n\n    if (params-\u003elocks \u003e 0)\n        cuMemsetD32Async((CUdeviceptr)params-\u003eLock, 0, grid.x * params-\u003elocks * 2, params-\u003estream);\n\n    if (params-\u003ebsize == 8)\n    {\n        if (sizeof(T) == 2 \u0026\u0026 (params-\u003eN \u0026 7) == 0)\n            gemm_blocksparse_gated_08x64x08x8_xprop\u003cFprop,T2,T8,T8\u003e\u003c\u003c\u003cgrid,32,params-\u003eshared*2,params-\u003estream\u003e\u003e\u003e(L2, params-\u003eGate, W2, X8, Y8, params-\u003eLock, params-\u003elocks, params-\u003eN\u003e\u003e3);\n        else\n            gemm_blocksparse_gated_08x64x08x4_xprop\u003cFprop,T2,T4,T2\u003e\u003c\u003c\u003cgrid,32,params-\u003eshared*2,params-\u003estream\u003e\u003e\u003e(L2, params-\u003eGate, W2, X4, Y2, params-\u003eLock, params-\u003elocks, params-\u003eN);\n    }\n    return cudaPeekAtLastError();\n}\ntemplate cudaError_t BsmmGatedXprop_CN\u003ctrue,  VTYPE(float)\u003e(const float* X, const float* W, float* Y, bsmm_params* params);\ntemplate cudaError_t BsmmGatedXprop_CN\u003ctrue,  VTYPE(ehalf)\u003e(const ehalf* X, const ehalf* W, ehalf* Y, bsmm_params* params);\ntemplate cudaError_t BsmmGatedXprop_CN\u003ctrue,  VTYPE(bhalf)\u003e(const bhalf* X, const bhalf* W, bhalf* Y, bsmm_params* params);\n\ntemplate cudaError_t BsmmGatedXprop_CN\u003cfalse, VTYPE(float)\u003e(const float* X, const float* W, float* Y, bsmm_params* params);\ntemplate cudaError_t BsmmGatedXprop_CN\u003cfalse, VTYPE(ehalf)\u003e(const ehalf* X, const ehalf* W, ehalf* Y, bsmm_params* params);\ntemplate cudaError_t BsmmGatedXprop_CN\u003cfalse, VTYPE(bhalf)\u003e(const bhalf* X, const bhalf* W, bhalf* Y, bsmm_params* params);\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

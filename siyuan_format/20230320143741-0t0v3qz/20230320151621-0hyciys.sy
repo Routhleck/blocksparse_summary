@@ -1,0 +1,40 @@
+{
+	"ID": "20230320151621-0hyciys",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320151621-0hyciys",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151632-n48ttdv\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151632-n48ttdv\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151632-n48ttdv\u0026quot;,\u0026quot;focusStart\u0026quot;:3,\u0026quot;focusEnd\u0026quot;:3}",
+		"title": "Status ReducedDWShape",
+		"updated": "20230320151632"
+	},
+	"Children": [
+		{
+			"ID": "20230320151632-n48ttdv",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320151632-n48ttdv",
+				"updated": "20230320151632"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "Status ReducedDWShape(InferenceContext* ctx)\n{\n    int params, bsize, axis;\n    TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(\"n_params\", \u0026params));\n    TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(\"bsize\",    \u0026bsize));\n    TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(\"axis\",     \u0026axis));\n    int bshift = bsize == 8 ? 3 : bsize == 16 ? 4 : bsize == 32 ? 5 : 6;\n\n    ShapeHandle x = ctx-\u003einput(0);\n    ShapeHandle y = ctx-\u003einput(params);\n    int rank = ctx-\u003eRank(x);\n    if (rank \u003e 1)\n    {\n        DimensionHandle C = ctx-\u003eMakeDim(ctx-\u003eValue(ctx-\u003eDim(x, axis)) \u003e\u003e bshift);\n        DimensionHandle K = ctx-\u003eMakeDim(ctx-\u003eValue(ctx-\u003eDim(y, axis)) \u003e\u003e bshift);\n        DimensionHandle P = ctx-\u003eMakeDim(params);\n\n        std::vector\u003cDimensionHandle\u003e x_red, y_red;\n        x_red.reserve(rank + 1);\n        y_red.reserve(rank + 1);\n        if (axis == 0)\n        {\n            x_red.push_back(C);\n            y_red.push_back(K);\n        }\n        x_red.push_back(P);\n        y_red.push_back(P);\n        x_red.push_back(ctx-\u003eDim(x, 1-axis));\n        y_red.push_back(ctx-\u003eDim(y, 1-axis));\n        if (axis == 1)\n        {\n            x_red.push_back(C);\n            y_red.push_back(K);\n        }\n\n        ctx-\u003eset_output(0, ctx-\u003eMakeShape({ C, K }));\n        ctx-\u003eset_output(1, ctx-\u003eMakeShape(x_red));\n        ctx-\u003eset_output(2, ctx-\u003eMakeShape(y_red));\n    }\n    else\n    {\n        ctx-\u003eset_output(0, ctx-\u003eUnknownShape());\n        ctx-\u003eset_output(1, ctx-\u003eUnknownShape());\n        ctx-\u003eset_output(2, ctx-\u003eUnknownShape());\n    }\n    return Status::OK();\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

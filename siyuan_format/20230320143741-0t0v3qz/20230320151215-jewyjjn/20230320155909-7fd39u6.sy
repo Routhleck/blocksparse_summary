@@ -1,0 +1,61 @@
+{
+	"ID": "20230320155909-7fd39u6",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320155909-7fd39u6",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320155909-vix2pb6\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320155909-vix2pb6\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320155909-vix2pb6\u0026quot;,\u0026quot;focusStart\u0026quot;:1852,\u0026quot;focusEnd\u0026quot;:1852}",
+		"title": "explicit BlocksparseMatmulOp",
+		"updated": "20230321142131"
+	},
+	"Children": [
+		{
+			"ID": "20230321142107-yfxn8go",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321142107-yfxn8go",
+				"updated": "20230321142131"
+			},
+			"Children": [
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230320151215-jewyjjn",
+					"TextMarkBlockRefSubtype": "d",
+					"TextMarkTextContent": "class BlocksparseMatmulOp"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "的构造函数，初始化各种参数"
+				}
+			]
+		},
+		{
+			"ID": "20230320155909-vix2pb6",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320155909-vix2pb6",
+				"updated": "20230320155940"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "explicit BlocksparseMatmulOp(OpKernelConstruction* ctx) : OpKernel(ctx), SMs_(0), major_(0), repeat_(1), flops_(0.0f)\n    {\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"segments\", \u0026params_.segments));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"locks\",    \u0026params_.locks   ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"blocks\",   \u0026params_.blocks  ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"bsize\",    \u0026params_.bsize  ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"C\",        \u0026params_.C       ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"K\",        \u0026params_.K       ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"shared\",   \u0026params_.shared  ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"alpha\",    \u0026params_.alpha   ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"beta\",     \u0026params_.beta    ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"gated_dw\", \u0026gated_dw_       ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"axis\",     \u0026axis_ ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"bench\",    \u0026bench_));\n        params_.pcount = 1;\n        params_.blk_A  = 0;\n\n        is_gpu_ = ctx-\u003edevice_type() == DEVICE_GPU;\n\n        //OP_REQUIRES(ctx, axis_ == 0, errors::InvalidArgument(\"Only feature axis=0 currently supported.\"));\n\n        // TODO: pack larger values of K in gridZ\n        OP_REQUIRES(ctx, params_.K \u003c params_.bsize*65536, errors::InvalidArgument(\"K \u003c bsize*65536\"));\n        OP_REQUIRES(ctx, params_.C \u003c params_.bsize*65536, errors::InvalidArgument(\"C \u003c bsize*65536\"));\n\n        if (bench_)\n        {\n            repeat_ = bench_;\n            flops_  = (float)(params_.blocks * params_.bsize*params_.bsize);\n\n            const char* op = OP == FPROP_OP ? \"FPROP\" : OP == BPROP_OP ? \"BPROP\" : \"UPDAT\";\n            sprintf(bench_string_, \"%s %02d-%d C:%05d K:%05d blks:%d\", op, params_.bsize, axis_, params_.C, params_.K, params_.blocks);\n        }\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

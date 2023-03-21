@@ -1,0 +1,910 @@
+{
+	"ID": "20230320151215-jewyjjn",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320151215-jewyjjn",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320160252-srdeecu\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151236-2zue65i\u0026quot;,\u0026quot;scrollTop\u0026quot;:353,\u0026quot;focusId\u0026quot;:\u0026quot;20230320163550-ov9kf77\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
+		"title": "class BlocksparseMatmulOp",
+		"updated": "20230321144645"
+	},
+	"Children": [
+		{
+			"ID": "20230320160252-srdeecu",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230320160252-srdeecu",
+				"updated": "20230320160301"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "成员方法"
+				}
+			]
+		},
+		{
+			"ID": "20230320155859-e1v2irl",
+			"Type": "NodeTable",
+			"TableAligns": [
+				0,
+				0,
+				0
+			],
+			"Properties": {
+				"colgroup": "||",
+				"id": "20230320155859-e1v2irl",
+				"updated": "20230320163346"
+			},
+			"Children": [
+				{
+					"Type": "NodeTableHead",
+					"Data": "thead",
+					"Children": [
+						{
+							"Type": "NodeTableRow",
+							"Data": "tr",
+							"Children": [
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "成员方法"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "返回类型"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "说明"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230320155909-7fd39u6",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "BlocksparseMatmulOp"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "构造函数"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "构造函数，用于创建 BlocksparseMatmulOp 对象"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230320160005-4kp6ppl",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "Compute"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "void"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "重载 OpKernel 的 Compute 函数，用于执行前向传播或反向传播操作"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230320160023-ekrpl72",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "Status Compute_Xprop"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "Status"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "前向传播函数，执行稀疏矩阵乘法操作"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230320160034-4jrbggy",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "Status Compute_Updat"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "Status"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "反向传播函数，执行稀疏矩阵乘法的梯度计算"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230320160247-pz4yh6c",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230320160247-pz4yh6c",
+				"updated": "20230320160307"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "成员变量"
+				}
+			]
+		},
+		{
+			"ID": "20230320160319-3sfq13k",
+			"Type": "NodeTable",
+			"TableAligns": [
+				0,
+				0,
+				0
+			],
+			"Properties": {
+				"colgroup": "||",
+				"id": "20230320160319-3sfq13k",
+				"updated": "20230321144645"
+			},
+			"Children": [
+				{
+					"Type": "NodeTableHead",
+					"Data": "thead",
+					"Children": [
+						{
+							"Type": "NodeTableRow",
+							"Data": "tr",
+							"Children": [
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Properties": {
+										"colspan": "1"
+									},
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "成员变量 "
+										}
+									]
+								},
+								{
+									"Type": "NodeKramdownSpanIAL",
+									"Data": "{: colspan=\"1\"}"
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Properties": {
+										"colspan": "1"
+									},
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "变量类型 "
+										}
+									]
+								},
+								{
+									"Type": "NodeKramdownSpanIAL",
+									"Data": "{: colspan=\"1\"}"
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Properties": {
+										"colspan": "1"
+									},
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "说明 "
+										}
+									]
+								},
+								{
+									"Type": "NodeKramdownSpanIAL",
+									"Data": "{: colspan=\"1\"}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "bsmm_params params_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "bsmm_params"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "稀疏矩阵乘法的参数"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "axis_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "用于指定进行矩阵乘法运算的维度以及计算张量 "
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "C"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​ 的输出形状。"
+								},
+								{
+									"Type": "NodeBr",
+									"Data": "br"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "bench_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "benchmark循环次数"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "repeat_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "向前传递、向后传递次数"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "SMs_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "SM核心数量"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "major_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "CUDA主版本号"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code s",
+									"TextMarkTextContent": "grid_n_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "s",
+									"TextMarkTextContent": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "s",
+									"TextMarkTextContent": "CUDA网格数量？没有用到"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "flops_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "float"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "用于记录浮点运算次数，用于性能评测"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "gated_dw_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "bool"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "用于记录是否进行 gated 操作"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "is_gpu_"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "bool"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "是否有GPU"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								},
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "code",
+									"TextMarkTextContent": "bench_string_[256]"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "char"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "benchmark名字"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230320163529-320vq7n",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230320163529-320vq7n",
+				"updated": "20230320163549"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "调用函数"
+				}
+			]
+		},
+		{
+			"ID": "20230320163550-ov9kf77",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320163550-ov9kf77"
+			}
+		},
+		{
+			"ID": "20230320160407-6r9tlxl",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230320160407-6r9tlxl",
+				"updated": "20230320160415"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "具体代码"
+				}
+			]
+		},
+		{
+			"ID": "20230320151236-2zue65i",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320151236-2zue65i",
+				"updated": "20230320160206"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cuint OP, MTYPE(T)\u003e\nclass BlocksparseMatmulOp : public OpKernel\n{\npublic:\n    explicit BlocksparseMatmulOp(OpKernelConstruction* ctx) : OpKernel(ctx), SMs_(0), major_(0), repeat_(1), flops_(0.0f)\n    {\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"segments\", \u0026params_.segments));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"locks\",    \u0026params_.locks   ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"blocks\",   \u0026params_.blocks  ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"bsize\",    \u0026params_.bsize  ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"C\",        \u0026params_.C       ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"K\",        \u0026params_.K       ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"shared\",   \u0026params_.shared  ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"alpha\",    \u0026params_.alpha   ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"beta\",     \u0026params_.beta    ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"gated_dw\", \u0026gated_dw_       ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"axis\",     \u0026axis_ ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"bench\",    \u0026bench_));\n        params_.pcount = 1;\n        params_.blk_A  = 0;\n\n        is_gpu_ = ctx-\u003edevice_type() == DEVICE_GPU;\n\n        //OP_REQUIRES(ctx, axis_ == 0, errors::InvalidArgument(\"Only feature axis=0 currently supported.\"));\n\n        // TODO: pack larger values of K in gridZ\n        OP_REQUIRES(ctx, params_.K \u003c params_.bsize*65536, errors::InvalidArgument(\"K \u003c bsize*65536\"));\n        OP_REQUIRES(ctx, params_.C \u003c params_.bsize*65536, errors::InvalidArgument(\"C \u003c bsize*65536\"));\n\n        if (bench_)\n        {\n            repeat_ = bench_;\n            flops_  = (float)(params_.blocks * params_.bsize*params_.bsize);\n\n            const char* op = OP == FPROP_OP ? \"FPROP\" : OP == BPROP_OP ? \"BPROP\" : \"UPDAT\";\n            sprintf(bench_string_, \"%s %02d-%d C:%05d K:%05d blks:%d\", op, params_.bsize, axis_, params_.C, params_.K, params_.blocks);\n        }\n    }\n    void Compute(OpKernelContext* ctx) override\n    {\n        if (major_ == 0)\n        {\n            SMs_ = GetCountSMsVersion(\u0026major_, NULL);\n            //OP_REQUIRES(ctx, major_ \u003e= 7, errors::InvalidArgument(\"Tensorcore GPU required\"));\n        }\n        if (OP == UPDAT_OP)\n            OP_REQUIRES_OK(ctx, this-\u003eCompute_Updat(ctx));\n        else\n            OP_REQUIRES_OK(ctx, this-\u003eCompute_Xprop(ctx, OP));\n    }\n    Status Compute_Xprop(OpKernelContext* ctx, uint op)\n    {\n        const Tensor\u0026 A = ctx-\u003einput(0);\n        const Tensor\u0026 B = ctx-\u003einput(1);\n        const Tensor\u0026 L = ctx-\u003einput(2);\n\n        OpInputList gate;\n        ctx-\u003einput_list(\"gate\", \u0026gate);\n\n        TensorShape shapeC;\n        int N     = 1;\n        int rankA = A.dims();\n        for (int i = 0; i \u003c rankA; i++)\n            if (i != axis_)\n            {\n                shapeC.AddDim(A.dim_size(i));\n                N *= A.dim_size(i);\n            }\n            else\n                shapeC.AddDim(params_.K);\n\n        bool tensorcores = major_ \u003e= 7 \u0026\u0026 std::is_same\u003cT1, ehalf\u003e::value;\n\n        int blkN = 128, gridN = CEIL_DIV(N, 128), modN128 = N \u0026 127;\n        if (!tensorcores || axis_ == 1 || (modN128 \u003e 0 \u0026\u0026 modN128 \u003c= 64) || gridN * params_.segments \u003c SMs_*4)\n        {\n            blkN  = 64;\n            gridN = CEIL_DIV(N, 64);\n        }\n\n        Tensor* C;\n        Status s = ctx-\u003eallocate_output(0, shapeC, \u0026C);\n        if (!s.ok()) return s;\n\n        Tensor* Lock;\n        TensorShape shapeL;\n        if (params_.locks \u003e 0)\n            shapeL.AddDim(gridN * params_.locks * 2);\n        s = ctx-\u003eallocate_output(1, shapeL, \u0026Lock);\n        if (!s.ok()) return s;\n\n        params_.Lock = params_.locks \u003e 0 ? Lock-\u003eflat\u003cint32\u003e().data() : nullptr;\n        params_.N    = N;\n        params_.Lut  = (const int*)L.flat\u003cint64\u003e().data();\n        params_.Gate = gate.size() \u003e 0 ? gate[0].flat\u003cfloat\u003e().data() : NULL;\n\n        if (params_.blk_A == 0)\n        {\n            ClosestDivisorTo4(params_.segments, true, \u0026params_.blk_a, \u0026params_.blk_A);\n            ClosestDivisorTo4(gridN,           false, \u0026params_.blk_b, \u0026params_.blk_B);\n\n            // printf(\"%d %d %d %d %d %d\\n\", params_.segments, gridN, params_.blk_a, params_.blk_b, params_.blk_A, params_.blk_B);\n        }\n\n        const T1* pA = (const T1*)A.flat\u003cT\u003e().data();\n        const T1* pB = (const T1*)B.flat\u003cT\u003e().data();\n              T1* pC = (      T1*)C-\u003eflat\u003cT\u003e().data();\n\n        if (is_gpu_)\n            params_.stream = ((CUDAStream*)ctx-\u003eop_device_context()-\u003estream()-\u003eimplementation())-\u003ecuda_stream();\n\n        Benchmark* bench = nullptr;\n        if (bench_) bench = new Benchmark(params_.stream, bench_string_, 0, flops_ * params_.N * params_.pcount, repeat_, is_gpu_);\n\n        cudaError_t res;\n        for (int r = 0; r \u003c repeat_; r++)\n            if (tensorcores)\n            {\n                if (axis_ == 0)\n                    if (blkN == 64)\n                        res = hgemm_blocksparse_xn_64_sdd( pA, pB, pC, \u0026params_, op == FPROP_OP ? OP_T : OP_N);\n                    else\n                        res = hgemm_blocksparse_xn_128_sdd(pA, pB, pC, \u0026params_, op == FPROP_OP ? OP_T : OP_N);\n                else\n                    res = hgemm_blocksparse_nx_dsd(pA, pB, pC, \u0026params_, op == FPROP_OP ? OP_N : OP_T);\n            }\n            else\n            {\n                if (params_.Gate == NULL \u0026\u0026 axis_ == 0)\n                {\n                    if (op == FPROP_OP)\n                        res = BsmmXprop_CN\u003c true,NTYPE(T)\u003e(pA, pB, pC, \u0026params_);\n                    else\n                        res = BsmmXprop_CN\u003cfalse,NTYPE(T)\u003e(pA, pB, pC, \u0026params_);\n                }\n                else\n                {\n                    // Cuda update for Volta broke these kernels.  Need to fix.\n                    // Ideally merge gated and non-gated code like is done with hgemm kernels.\n                    return errors::Internal(\"Gated blocksparse matmul currently only supported on fp16 tensorcores.\");\n                    // if (op == NN_OP)\n                    //     res = BsmmGatedXprop_CN\u003cfalse,NTYPE(T)\u003e(pA, pB, pC, \u0026params_);\n                    // else\n                    //     res = BsmmGatedXprop_CN\u003c true,NTYPE(T)\u003e(pA, pB, pC, \u0026params_);\n                }\n            }\n\n        if (bench) delete bench;\n\n        if (cudaSuccess != res)\n            return errors::Internal(cudaGetErrorString(res));\n        return Status::OK();\n    }\n    Status Compute_Updat(OpKernelContext* ctx)\n    {\n        OpInputList x, dy, gate;\n\n        ctx-\u003einput_list(   \"x\", \u0026x);\n        ctx-\u003einput_list(  \"dy\", \u0026dy);\n        ctx-\u003einput_list(\"gate\", \u0026gate);\n\n        params_.pcount = x.size();\n\n        if (params_.pcount \u003e 8)\n            return errors::Internal(\"No more than 8 inputs allowed.\");\n\n        struct Plist\u003cT1,8\u003e X;\n        struct Plist\u003cT1,8\u003e DY;\n        for (int i = 0; i \u003c params_.pcount; ++i)\n        {\n             X.a[i] = (const T1*) x[i].flat\u003cT\u003e().data();\n            DY.a[i] = (const T1*)dy[i].flat\u003cT\u003e().data();\n        }\n        params_.N = 1;\n        int rank = x[0].dims();\n        for (int i = 0; i \u003c rank; i++)\n            if (i != axis_)\n                params_.N *= x[0].dim_size(i);\n\n        T1* DW;\n        if (params_.beta == 0.0f)\n        {\n            // BlocksparseMatmulDW: [x], [dy], lut, [gate]\n            if (ctx-\u003enum_inputs() != params_.pcount*2 + 1 + gate.size())\n                return errors::Internal(\"with beta=0.0, use BlocksparseMatmulDW \", ctx-\u003enum_inputs());\n\n            Tensor* C;\n            TensorShape shapeC({ params_.blocks, params_.bsize, params_.bsize });\n            Status s = ctx-\u003eallocate_output(0, shapeC, \u0026C);\n            if (!s.ok()) return s;\n            DW = (T1*)C-\u003eflat\u003cT\u003e().data();\n        }\n        else\n        {\n            // BlocksparseMatmulDWA: [x], [dy], lut, dwi, [gate]\n            if (ctx-\u003enum_inputs() != params_.pcount*2 + 2 + gate.size())\n                return errors::Internal(\"with beta!=0.0, use BlocksparseMatmulDWA \", ctx-\u003enum_inputs());\n\n            // accumulate to C in place\n            const Tensor\u0026 C = ctx-\u003einput(params_.pcount*2 + 1);\n            ctx-\u003eset_output(0, C);\n            DW = (T1*)C.flat\u003cT\u003e().data();\n        }\n        params_.Lut  = (const int*)ctx-\u003einput(params_.pcount*2).flat\u003cint64\u003e().data();\n        params_.Gate = gated_dw_ \u0026\u0026 gate.size() \u003e 0 ? gate[0].flat\u003cfloat\u003e().data() : NULL;\n\n        if (is_gpu_)\n            params_.stream = ((CUDAStream*)ctx-\u003eop_device_context()-\u003estream()-\u003eimplementation())-\u003ecuda_stream();\n\n        Benchmark* bench = nullptr;\n        if (bench_) bench = new Benchmark(params_.stream, bench_string_, 0, flops_ * params_.N * params_.pcount, repeat_, is_gpu_);\n\n        cudaError_t res;\n        for (int r = 0; r \u003c repeat_; r++)\n            if (major_ \u003e= 7 \u0026\u0026 std::is_same\u003cT1, ehalf\u003e::value)\n            {\n                if (axis_ == 0)\n                {\n                    int modN128 = params_.N \u0026 127;\n                    if (modN128 \u003e 0 \u0026\u0026 modN128 \u003c= 64)\n                        res = hgemm_blocksparse_nt_64_dds( (const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n                    else\n                        res = hgemm_blocksparse_nt_128_dds((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n                }\n                else\n                    res = hgemm_blocksparse_tn_dds((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n            }\n            else\n            {\n                if (params_.Gate == NULL \u0026\u0026 axis_ == 0)\n                    res = BsmmUpdat_CN\u003cNTYPE(T)\u003e((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n                else\n                    return errors::Internal(\"Gated blocksparse matmul currently only supported on fp16 tensorcores.\");\n                    // res = BsmmGatedUpdat_CN\u003cNTYPE(T)\u003e((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n            }\n\n        if (bench) delete bench;\n\n        if (cudaSuccess != res)\n            return errors::Internal(cudaGetErrorString(res));\n        return Status::OK();\n    }\n    bsmm_params params_;\n    int   axis_, bench_, repeat_, SMs_, major_, grid_n_;\n    float flops_;\n    bool  gated_dw_, is_gpu_;\n    char  bench_string_[256];\n};\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,54 @@
+{
+	"ID": "20230321140826-hnotu2j",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230321140826-hnotu2j",
+		"title": "class BlocksparseMatmul",
+		"updated": "20230321140850"
+	},
+	"Children": [
+		{
+			"ID": "20230321140826-n93l29p",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321140826-n93l29p",
+				"updated": "20230321140826"
+			}
+		},
+		{
+			"ID": "20230321140850-7ln44vl",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321140850-7ln44vl"
+			}
+		},
+		{
+			"ID": "20230321140850-2rmw9kh",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230321140850-2rmw9kh",
+				"updated": "20230321140850"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cCTYPE3(TA,TB,TC)\u003e\nclass BlocksparseMatmul\n{\npublic:\n    BlocksparseMatmul(bsmm_params* params) : params_(params), major_(0) {}\n    virtual ~BlocksparseMatmul() {}\n\n    virtual Status Compute(const TA* A, const TB* B, TC* C) =0;\n\n    bsmm_params* params_;\n    int major_;\n};\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"ID": "20230320155119-neurc48",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320155119-neurc48",
+		"title": "bool BlocksparseGateGrad",
+		"updated": "20230320155147"
+	},
+	"Children": [
+		{
+			"ID": "20230320155142-a97on6x",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320155142-a97on6x",
+				"updated": "20230320155145"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003ctypename T\u003e\nbool BlocksparseGateGrad(CUstream stream, T* dw_out, float* dg, const T* dw, const T* w, const float* g, uint blocks, uint bsize)\n{\n         if (bsize ==  8)\n        blocksparse_gate_grad\u003cT, 8,  32\u003e\u003c\u003c\u003cblocks,  32,0,stream\u003e\u003e\u003e(dw_out, dg, dw, w, g);\n    else if (bsize == 16)\n        blocksparse_gate_grad\u003cT,16,  64\u003e\u003c\u003c\u003cblocks,  64,0,stream\u003e\u003e\u003e(dw_out, dg, dw, w, g);\n    else if (bsize == 32)\n        blocksparse_gate_grad\u003cT,32, 256\u003e\u003c\u003c\u003cblocks, 256,0,stream\u003e\u003e\u003e(dw_out, dg, dw, w, g);\n    else if (bsize == 64)\n        blocksparse_gate_grad\u003cT,64,1024\u003e\u003c\u003c\u003cblocks,1024,0,stream\u003e\u003e\u003e(dw_out, dg, dw, w, g);\n    return true;\n}\ntemplate bool BlocksparseGateGrad\u003cfloat\u003e(CUstream stream, float* dw_out, float* dg, const float* dw, const float* w, const float* g, uint blocks, uint bsize);\ntemplate bool BlocksparseGateGrad\u003cehalf\u003e(CUstream stream, ehalf* dw_out, float* dg, const ehalf* dw, const ehalf* w, const float* g, uint blocks, uint bsize);\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320155147-pz85wxq",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320155147-pz85wxq"
+			}
+		}
+	]
+}

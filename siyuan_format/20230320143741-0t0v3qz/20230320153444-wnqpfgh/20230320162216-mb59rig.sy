@@ -1,0 +1,39 @@
+{
+	"ID": "20230320162216-mb59rig",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320162216-mb59rig",
+		"title": "void Compute",
+		"updated": "20230320162238"
+	},
+	"Children": [
+		{
+			"ID": "20230320162216-ec7ohhc",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320162216-ec7ohhc",
+				"updated": "20230320162238"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "void Compute(OpKernelContext* ctx) override\n    {\n        OpInputList x, y;\n        ctx-\u003einput_list( \"x\", \u0026x);\n        ctx-\u003einput_list(\"dy\", \u0026y);\n        uint params = x.size();\n        float scale = ctx-\u003einput(params*2).scalar\u003cfloat\u003e()();\n        OP_REQUIRES(ctx, params \u003c= 8, errors::InvalidArgument(\"No more than 8 inputs allowed.\"));\n\n        uint C  = x[0].dim_size(axis);\n        uint K  = y[0].dim_size(axis);\n        uint bC = C \u003e\u003e bshift;\n        uint bK = K \u003e\u003e bshift;\n        uint N  = x[0].dim_size(1-axis);\n        TensorShape shapeX, shapeY;\n        if (axis == 0)\n        {\n            shapeX.AddDim(bC);\n            shapeY.AddDim(bK);\n        }\n        shapeX.AddDim(params);\n        shapeY.AddDim(params);\n        shapeX.AddDim(N);\n        shapeY.AddDim(N);\n        if (axis == 1)\n        {\n            shapeX.AddDim(bC);\n            shapeY.AddDim(bK);\n        }\n\n        if (major_version == 0)\n        {\n            GetCountSMsVersion(\u0026major_version, NULL);\n            OP_REQUIRES(ctx, major_version \u003e= 7, errors::InvalidArgument(\"Tensorcore GPU required\"));\n\n            OP_REQUIRES(ctx, (bC \u0026 1) == 0 \u0026\u0026 (bK \u0026 1) == 0, errors::InvalidArgument(\"Block reduced feature dim must be multiple of 2.\"));\n\n            ClosestDivisorTo4(axis == 0 ? CEIL_DIV(bC, 32) : CEIL_DIV(bC, 64), true, \u0026blk_a, \u0026blk_A);\n            ClosestDivisorTo4(axis == 0 ? CEIL_DIV(bK, 32) : CEIL_DIV(bK, 64),false, \u0026blk_b, \u0026blk_B);\n        }\n\n        struct Plist\u003cehalf,8\u003e X, Y;\n        for (int i = 0; i \u003c params; ++i)\n        {\n            X.a[i] = (const ehalf*)x[i].flat\u003cEHALF\u003e().data();\n            Y.a[i] = (const ehalf*)y[i].flat\u003cEHALF\u003e().data();\n        }\n\n        float* DW;\n        uint accumulate;\n        if (ctx-\u003enum_inputs() \u003e params*2 + 1)\n        {\n            // accumulate to DW in place\n            accumulate = 1;\n            const Tensor\u0026 dw = ctx-\u003einput(params*2 + 1);\n            ctx-\u003eset_output(0, dw);\n            DW = (float*)dw.flat\u003cfloat\u003e().data();\n        }\n        else\n        {\n            accumulate = 0;\n            Tensor *dw;\n            OP_REQUIRES_OK(ctx, ctx-\u003eallocate_output(0, TensorShape({ bC, bK }), \u0026dw));\n            DW = dw-\u003eflat\u003cfloat\u003e().data();\n        }\n        Tensor *redX, *redY;\n        OP_REQUIRES_OK(ctx, ctx-\u003eallocate_output(1, shapeX, \u0026redX));\n        OP_REQUIRES_OK(ctx, ctx-\u003eallocate_output(2, shapeY, \u0026redY));\n        ehalf* RedX = (ehalf*)redX-\u003eflat\u003cEHALF\u003e().data();\n        ehalf* RedY = (ehalf*)redY-\u003eflat\u003cEHALF\u003e().data();\n\n        CUstream stream = ((CUDAStream*)ctx-\u003eop_device_context()-\u003estream()-\u003eimplementation())-\u003ecuda_stream();\n\n        if (scale != 0.0f)\n        {\n            if (axis == 0)\n            {\n                BlocksparseFeatureReduceCN(stream, RedX, \u0026X, params, C, N, bshift, norm);\n                BlocksparseFeatureReduceCN(stream, RedY, \u0026Y, params, K, N, bshift, norm);\n            }\n            else\n            {\n                BlocksparseFeatureReduceNC(stream, RedX, \u0026X, params, C, N, bshift, norm);\n                BlocksparseFeatureReduceNC(stream, RedY, \u0026Y, params, K, N, bshift, norm);\n            }\n        }\n        if (axis == 0)\n            hGemmNT(stream, RedX, RedY, DW, bC, bK, N*params, blk_A, blk_B, blk_a, blk_b, accumulate, scale);\n        else\n            hGemmTN(stream, RedX, RedY, DW, bC, bK, N*params, blk_A, blk_B, blk_a, blk_b, accumulate, scale);\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

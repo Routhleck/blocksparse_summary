@@ -1,0 +1,39 @@
+{
+	"ID": "20230320155425-nz02p4s",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320155425-nz02p4s",
+		"title": "bool hGemmTN",
+		"updated": "20230320155543"
+	},
+	"Children": [
+		{
+			"ID": "20230320155543-5y08yrl",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320155543-5y08yrl",
+				"updated": "20230320155543"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "bool hGemmTN(CUstream stream, const ehalf* A, const ehalf* B, float* C, uint M, uint N, uint K, uint blk_a, uint blk_b, uint blk_A, uint blk_B, uint accumulate, float scale)\n{\n    if (scale != 0.0f)\n    {\n        dim3 grid(blk_a*blk_b, blk_B, blk_A);\n        if (M \u0026 63)\n            if (accumulate)\n                hgemm_64x64x32_tn\u003cfalse, true\u003e\u003c\u003c\u003cgrid,256,0,stream\u003e\u003e\u003e(A, B, C, M, N, K, blk_a, blk_b, scale);\n            else\n                hgemm_64x64x32_tn\u003cfalse,false\u003e\u003c\u003c\u003cgrid,256,0,stream\u003e\u003e\u003e(A, B, C, M, N, K, blk_a, blk_b, scale);\n        else\n            if (accumulate)\n                hgemm_64x64x32_tn\u003c true, true\u003e\u003c\u003c\u003cgrid,256,0,stream\u003e\u003e\u003e(A, B, C, M, N, K, blk_a, blk_b, scale);\n            else\n                hgemm_64x64x32_tn\u003c true,false\u003e\u003c\u003c\u003cgrid,256,0,stream\u003e\u003e\u003e(A, B, C, M, N, K, blk_a, blk_b, scale);\n    }\n    else if (accumulate == 0)\n        cuMemsetD32Async((CUdeviceptr)C, 0, M*N, stream);\n\n    return true;\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

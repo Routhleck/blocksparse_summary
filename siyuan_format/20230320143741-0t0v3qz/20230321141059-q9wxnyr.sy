@@ -1,0 +1,61 @@
+{
+	"ID": "20230321141059-q9wxnyr",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230321141059-q9wxnyr",
+		"title": "class BlocksparseMatmulUpdat_NC",
+		"updated": "20230321141110"
+	},
+	"Children": [
+		{
+			"ID": "20230321141059-oierpct",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141059-oierpct",
+				"updated": "20230321141059"
+			}
+		},
+		{
+			"ID": "20230321141109-bhxppq1",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141109-bhxppq1"
+			}
+		},
+		{
+			"ID": "20230321141109-qytlmcb",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141109-qytlmcb"
+			}
+		},
+		{
+			"ID": "20230321141110-65ifq6h",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230321141110-65ifq6h",
+				"updated": "20230321141110"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cCTYPE3(TA,TB,TC)\u003e\nclass BlocksparseMatmulUpdat_NC : public BlocksparseMatmul_NC\u003cVTYPE3(TA,TB,TC)\u003e\n{\npublic:\n    BlocksparseMatmulUpdat_NC(bsmm_params* params) :\n        BlocksparseMatmul_NC\u003cVTYPE3(TA,TB,TC)\u003e(params, \"updat\", 8, 32) {}\n\n    virtual Status Compute(const TA* A, const TB* B, TC* C)\n    {\n        struct plist8\u003cTA\u003e* pA = (struct plist8\u003cTA\u003e*)A;\n        struct plist8\u003cTB\u003e* pB = (struct plist8\u003cTB\u003e*)B;\n        bsmm_params* params = this-\u003eparams_;\n        int pcount = params-\u003epcount * 8;\n\n        //printf(\"%p %p %p %p %d %d\\n\", pA-\u003ea[0], pB-\u003ea[0], L, C, N, params);\n\n        GetKernel(this-\u003ekernel_name_, \u0026this-\u003ekernel_);\n        //printf(\"%s %p\\n\", kernel_name_.c_str(), kernel_);\n\n        void *args[] = { pA, pB, \u0026params-\u003eLut, \u0026C, \u0026params-\u003ealpha, \u0026params-\u003ebeta, \u0026params-\u003eC, \u0026params-\u003eK, \u0026params-\u003eN, \u0026pcount };\n\n        CUresult res = cuLaunchKernel(this-\u003ekernel_, params-\u003eblocks, 1, 1, this-\u003ethreads_, 1, 1, params-\u003eshared, params-\u003estream, args, NULL);\n        if (res != CUDA_SUCCESS)\n        {\n            const char* errstr;\n            cuGetErrorString(res, \u0026errstr);\n            return errors::Internal(errstr);\n        }\n        return Status::OK();\n    }\n};\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

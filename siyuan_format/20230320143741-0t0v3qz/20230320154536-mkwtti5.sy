@@ -1,0 +1,46 @@
+{
+	"ID": "20230320154536-mkwtti5",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320154536-mkwtti5",
+		"title": "cudaError_t hgemm_blocksparse_nt_64_dds",
+		"updated": "20230320154555"
+	},
+	"Children": [
+		{
+			"ID": "20230320154552-sdz78fx",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320154552-sdz78fx",
+				"updated": "20230320154554"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "cudaError_t hgemm_blocksparse_nt_64_dds(const ehalf* X, const ehalf* E, ehalf* U, bsmm_params* params)\n{\n    struct Plist\u003cehalf,8\u003e* X8 = (struct Plist\u003cehalf,8\u003e*)X;\n    struct Plist\u003cehalf,8\u003e* E8 = (struct Plist\u003cehalf,8\u003e*)E;\n\n    const uint2* Lut = (const uint2*)params-\u003eLut;\n    uint accumulate  = params-\u003ebeta == 1.0f;\n    uint pcount8     = params-\u003epcount * 8;\n    uint N           = params-\u003eN;\n    uint loops       = CEIL_DIV(N, 64);\n    bool k64         = (N \u0026 63) == 0;\n\n    dim3 grid(params-\u003eblocks, 1, 1);\n\n    if (params-\u003ebsize == 8)\n    {\n        if (params-\u003eGate == 0)\n        {\n            if (k64)\n                hgemm_blocksparse_8x8x64_nt_dds\u003c true,false\u003e\u003c\u003c\u003cgrid,32,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n            else\n                hgemm_blocksparse_8x8x64_nt_dds\u003cfalse,false\u003e\u003c\u003c\u003cgrid,32,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n        }\n        else\n        {\n            if (k64)\n                hgemm_blocksparse_8x8x64_nt_dds\u003c true, true\u003e\u003c\u003c\u003cgrid,32,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n            else\n                hgemm_blocksparse_8x8x64_nt_dds\u003cfalse, true\u003e\u003c\u003c\u003cgrid,32,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n        }\n    }\n    else if (params-\u003ebsize == 16)\n    {\n        if (params-\u003eGate == 0)\n        {\n            if (k64)\n                hgemm_blocksparse_16x16x64_nt_dds\u003c true,false\u003e\u003c\u003c\u003cgrid,64,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n            else\n                hgemm_blocksparse_16x16x64_nt_dds\u003cfalse,false\u003e\u003c\u003c\u003cgrid,64,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n        }\n        else\n        {\n            if (k64)\n                hgemm_blocksparse_16x16x64_nt_dds\u003c true, true\u003e\u003c\u003c\u003cgrid,64,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n            else\n                hgemm_blocksparse_16x16x64_nt_dds\u003cfalse, true\u003e\u003c\u003c\u003cgrid,64,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n        }\n    }\n    else if (params-\u003ebsize == 32)\n    {\n        if (params-\u003eGate == 0)\n        {\n            if (k64)\n                hgemm_blocksparse_32x32x64_nt_dds\u003c true,false\u003e\u003c\u003c\u003cgrid,128,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n            else\n                hgemm_blocksparse_32x32x64_nt_dds\u003cfalse,false\u003e\u003c\u003c\u003cgrid,128,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n        }\n        else\n        {\n            if (k64)\n                hgemm_blocksparse_32x32x64_nt_dds\u003c true, true\u003e\u003c\u003c\u003cgrid,128,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n            else\n                hgemm_blocksparse_32x32x64_nt_dds\u003cfalse, true\u003e\u003c\u003c\u003cgrid,128,0,params-\u003estream\u003e\u003e\u003e(*X8, *E8, U, Lut, params-\u003eGate, pcount8, N, loops, accumulate);\n        }\n    }\n    return cudaPeekAtLastError();\n}\ncudaError_t hgemm_blocksparse_nt_64_dds(const bhalf* X, const bhalf* E, bhalf* U, bsmm_params* params) { return cudaSuccess; }\ncudaError_t hgemm_blocksparse_nt_64_dds(const float* X, const float* E, float* U, bsmm_params* params) { return cudaSuccess; }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320154555-981a57m",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320154555-981a57m"
+			}
+		}
+	]
+}

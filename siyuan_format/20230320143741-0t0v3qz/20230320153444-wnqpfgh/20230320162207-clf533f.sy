@@ -1,0 +1,39 @@
+{
+	"ID": "20230320162207-clf533f",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320162207-clf533f",
+		"title": "explicit BlocksparseReducedDWOp",
+		"updated": "20230320162225"
+	},
+	"Children": [
+		{
+			"ID": "20230320162207-zuit5sj",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320162207-zuit5sj",
+				"updated": "20230320162225"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "explicit BlocksparseReducedDWOp(OpKernelConstruction* ctx) : OpKernel(ctx), major_version(0)\n    {\n        int bsize;\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"bsize\", \u0026bsize));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"norm\",  \u0026norm ));\n        OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"axis\",  \u0026axis ));\n        OP_REQUIRES(ctx, axis == 0 || axis == 1, errors::InvalidArgument(\"invalid feature axis, only 0,1 supported.\"));\n        if (axis == 0)\n            OP_REQUIRES(ctx, bsize == 8 || bsize == 16 || bsize == 32, errors::InvalidArgument(\"Only feature axis=0 supports blocksizes: 8,16,32\"));\n        else\n            OP_REQUIRES(ctx, bsize == 32 || bsize == 64, errors::InvalidArgument(\"Only feature axis=0 supports blocksizes: 32,64\"));\n\n        bshift = bsize == 8 ? 3 : bsize == 16 ? 4 : bsize == 32 ? 5 : 6;\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

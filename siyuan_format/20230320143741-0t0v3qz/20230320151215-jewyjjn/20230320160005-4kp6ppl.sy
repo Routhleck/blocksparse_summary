@@ -1,0 +1,79 @@
+{
+	"ID": "20230320160005-4kp6ppl",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320160005-4kp6ppl",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320160005-4ku6v0d\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320160005-4ku6v0d\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320160005-4ku6v0d\u0026quot;,\u0026quot;focusStart\u0026quot;:417,\u0026quot;focusEnd\u0026quot;:417}",
+		"title": "void compute",
+		"updated": "20230321144832"
+	},
+	"Children": [
+		{
+			"ID": "20230321142139-fktn7us",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321142139-fktn7us",
+				"updated": "20230321144830"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "判断OP来判断执行的是向前还是向后传递，分别调用"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230320160023-ekrpl72",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "Compute_Xprop"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "和"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230320160034-4jrbggy",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "Compute_Updat"
+				}
+			]
+		},
+		{
+			"ID": "20230320160005-4ku6v0d",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320160005-4ku6v0d",
+				"updated": "20230320160450"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "void Compute(OpKernelContext* ctx) override\n    {\n        if (major_ == 0)\n        {\n            SMs_ = GetCountSMsVersion(\u0026major_, NULL);\n            //OP_REQUIRES(ctx, major_ \u003e= 7, errors::InvalidArgument(\"Tensorcore GPU required\"));\n        }\n        if (OP == UPDAT_OP)\n            OP_REQUIRES_OK(ctx, this-\u003eCompute_Updat(ctx));\n        else\n            OP_REQUIRES_OK(ctx, this-\u003eCompute_Xprop(ctx, OP));\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230321144832-6athu3n",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321144832-6athu3n"
+			}
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"ID": "20230320151541-pbll6md",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320151541-pbll6md",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151549-mz672od\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151550-spbij9w\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151550-spbij9w\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
+		"title": "bool IdentityInitCK",
+		"updated": "20230320155227"
+	},
+	"Children": [
+		{
+			"ID": "20230320151549-mz672od",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320151549-mz672od",
+				"updated": "20230320155227"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "bool IdentityInitCK(CUstream stream, float* W, const int* lut, int CB, int KB, int blocks, int bsize, float scale)\n{\n         if (bsize ==  8)\n        identity_init_CK\u003c 8,  32\u003e\u003c\u003c\u003cblocks,  32, 0, stream\u003e\u003e\u003e(W, (const int2*)lut, CB, KB, scale);\n    else if (bsize == 16)\n        identity_init_CK\u003c16,  64\u003e\u003c\u003c\u003cblocks,  64, 0, stream\u003e\u003e\u003e(W, (const int2*)lut, CB, KB, scale);\n    else if (bsize == 32)\n        identity_init_CK\u003c32, 256\u003e\u003c\u003c\u003cblocks, 256, 0, stream\u003e\u003e\u003e(W, (const int2*)lut, CB, KB, scale);\n    else if (bsize == 64)\n        identity_init_CK\u003c64,1024\u003e\u003c\u003c\u003cblocks,1024, 0, stream\u003e\u003e\u003e(W, (const int2*)lut, CB, KB, scale);\n    return true; // TODO\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320151550-spbij9w",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320151550-spbij9w"
+			}
+		}
+	]
+}

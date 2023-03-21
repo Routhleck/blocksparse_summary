@@ -1,0 +1,47 @@
+{
+	"ID": "20230320161631-v6opw6f",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320161631-v6opw6f",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320161631-pzrqkm3\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320161653-z5guzx8\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320161653-z5guzx8\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
+		"title": "explicit BlocksparseMatmulDGOp",
+		"updated": "20230320161653"
+	},
+	"Children": [
+		{
+			"ID": "20230320161631-pzrqkm3",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320161631-pzrqkm3",
+				"updated": "20230320161649"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "explicit BlocksparseMatmulDGOp(OpKernelConstruction* ctx) : OpKernel(ctx) { }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320161653-z5guzx8",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320161653-z5guzx8"
+			}
+		}
+	]
+}

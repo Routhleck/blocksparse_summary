@@ -1,0 +1,61 @@
+{
+	"ID": "20230321140941-eyq3bsp",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230321140941-eyq3bsp",
+		"title": "class BlocksparseMatmulUpdat_CN",
+		"updated": "20230321140950"
+	},
+	"Children": [
+		{
+			"ID": "20230321140941-91jwwhj",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321140941-91jwwhj",
+				"updated": "20230321140941"
+			}
+		},
+		{
+			"ID": "20230321140944-4yrfzcb",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321140944-4yrfzcb"
+			}
+		},
+		{
+			"ID": "20230321140944-eosfmd9",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321140944-eosfmd9"
+			}
+		},
+		{
+			"ID": "20230321140950-dve64j0",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230321140950-dve64j0",
+				"updated": "20230321140950"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cCTYPE3(TA,TB,TC)\u003e\nclass BlocksparseMatmulUpdat_CN : public BlocksparseMatmul\u003cVTYPE3(TA,TB,TC)\u003e\n{\npublic:\n    BlocksparseMatmulUpdat_CN(bsmm_params* params) :\n        BlocksparseMatmul\u003cVTYPE3(TA,TB,TC)\u003e(params) {}\n\n    virtual Status Compute(const TA* A, const TB* B, TC* C)\n    {\n        if (this-\u003emajor_ == 0)\n            GetCountSMsVersion(\u0026this-\u003emajor_, NULL);\n\n        cudaError_t res;\n        if (this-\u003emajor_ \u003e= 7 \u0026\u0026 std::is_same\u003cTA, ehalf\u003e::value)\n            res = hgemm_blocksparse_nt_dds(A, B, C, this-\u003eparams_);\n        else\n            if (this-\u003eparams_-\u003eGate == NULL)\n                res = BsmmUpdat_CN\u003cVTYPE3(TA,TB,TC)\u003e(A, B, C, this-\u003eparams_);\n            else\n                res = BsmmGatedUpdat_CN\u003cVTYPE3(TA,TB,TC)\u003e(A, B, C, this-\u003eparams_);\n\n        if (cudaSuccess != res)\n            return errors::Internal(cudaGetErrorString(res));\n        return Status::OK();\n    }\n};\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

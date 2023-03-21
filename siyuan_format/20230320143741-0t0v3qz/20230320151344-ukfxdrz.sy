@@ -1,0 +1,47 @@
+{
+	"ID": "20230320151344-ukfxdrz",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320151344-ukfxdrz",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151357-fnwnlex\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151400-si82hbs\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151400-si82hbs\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
+		"title": "Status UpdatShape",
+		"updated": "20230320151400"
+	},
+	"Children": [
+		{
+			"ID": "20230320151357-fnwnlex",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320151357-fnwnlex",
+				"updated": "20230320151400"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "Status UpdatShape(InferenceContext* ctx)\n{\n    //printf(\"UpdatShape: %d\\n\", ctx-\u003eRank(ctx-\u003einput(0)));\n\n    int blocks, bsize;\n    TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(\"blocks\", \u0026blocks));\n    TF_RETURN_IF_ERROR(ctx-\u003eGetAttr(\"bsize\",  \u0026bsize));\n\n    // (blocks, block_size, block_size)\n    DimensionHandle bsize_dim = ctx-\u003eMakeDim(bsize);\n    ctx-\u003eset_output(0, ctx-\u003eMakeShape({ ctx-\u003eMakeDim(blocks), bsize_dim, bsize_dim }));\n    return Status::OK();\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320151400-si82hbs",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320151400-si82hbs"
+			}
+		}
+	]
+}

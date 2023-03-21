@@ -1,0 +1,39 @@
+{
+	"ID": "20230320154957-wmr2s1l",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320154957-wmr2s1l",
+		"title": "cudaError_t hgemm_blocksparse_nx_dsd",
+		"updated": "20230320155017"
+	},
+	"Children": [
+		{
+			"ID": "20230320155015-ukusbvq",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320155015-ukusbvq",
+				"updated": "20230320155017"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "cudaError_t hgemm_blocksparse_nx_dsd(const ehalf* X, const ehalf* W, ehalf* Y, bsmm_params* params, uint op)\n{\n    dim3 grid(params-\u003eblk_a*params-\u003eblk_b, params-\u003eblk_B, params-\u003eblk_A);\n    uint blk_N = params-\u003eblk_b * params-\u003eblk_B;\n\n    // cuMemsetD16Async((CUdeviceptr)Y, 0, params-\u003eK * params-\u003eN, params-\u003estream);\n    if (params-\u003elocks \u003e 0)\n        cuMemsetD32Async((CUdeviceptr)params-\u003eLock, 0, blk_N * params-\u003elocks * 2, params-\u003estream);\n\n    const uint2* Lut = (const uint2*)params-\u003eLut;\n    uint* Lock       = (uint*)params-\u003eLock;\n\n    bool   N64 = (params-\u003eN \u0026 63) == 0;\n    int shared = params-\u003eshared + params-\u003eshared/2;\n\n    if (params-\u003ebsize == 32)\n    {\n        // 132*16*4 - ((32+8)*64 + (32+16)*32)*2\n        shared -= op == OP_N ? 256 : 768;\n        if (shared \u003c 0) shared = 0;\n\n        if (params-\u003eGate == 0)\n        {\n            if (op == OP_N)\n                if (N64)\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_N, true,false\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_N,false,false\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n            else\n                if (N64)\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_T, true,false\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_T,false,false\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n        }\n        else\n        {\n            if (op == OP_N)\n                if (N64)\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_N, true, true\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_N,false, true\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n            else\n                if (N64)\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_T, true, true\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x32x32_nx_dsd\u003cOP_T,false, true\u003e\u003c\u003c\u003cgrid,128,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n        }\n    }\n    else if (params-\u003ebsize == 64)\n    {\n        if (params-\u003eGate == 0)\n        {\n            if (op == OP_N)\n                if (N64)\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_N, true,false\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_N,false,false\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n            else\n                if (N64)\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_T, true,false\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_T,false,false\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n        }\n        else\n        {\n            if (op == OP_N)\n                if (N64)\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_N, true, true\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_N,false, true\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n            else\n                if (N64)\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_T, true, true\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n                else\n                    hgemm_blocksparse_64x64x64_nx_dsd\u003cOP_T,false, true\u003e\u003c\u003c\u003cgrid,256,shared,params-\u003estream\u003e\u003e\u003e(Lut, params-\u003eGate, X, W, Y, Lock, params-\u003elocks, params-\u003eN, params-\u003eC, params-\u003eK, params-\u003eblk_a, params-\u003eblk_b, blk_N);\n        }\n    }\n    return cudaPeekAtLastError();\n}\ncudaError_t hgemm_blocksparse_nx_dsd(const bhalf* X, const bhalf* W, bhalf* Y, bsmm_params* params, uint op) { return cudaSuccess; }\ncudaError_t hgemm_blocksparse_nx_dsd(const float* X, const float* W, float* Y, bsmm_params* params, uint op) { return cudaSuccess; }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

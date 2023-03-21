@@ -1,0 +1,39 @@
+{
+	"ID": "20230320162715-4jn1e5i",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320162715-4jn1e5i",
+		"title": "explicit BlocksparseMatmulIdentityInitOp",
+		"updated": "20230320162724"
+	},
+	"Children": [
+		{
+			"ID": "20230320162715-homarhf",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320162715-homarhf",
+				"updated": "20230320162719"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "explicit BlocksparseMatmulIdentityInitOp(OpKernelConstruction* ctx) : OpKernel(ctx) {\n\n    OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"CB\",     \u0026CB_    ));\n    OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"KB\",     \u0026KB_    ));\n    OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"blocks\", \u0026blocks_));\n    OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"bsize\",  \u0026bsize_ ));\n    OP_REQUIRES_OK(ctx, ctx-\u003eGetAttr(\"scale\",  \u0026scale_ ));\n  }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

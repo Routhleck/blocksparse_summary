@@ -1,0 +1,61 @@
+{
+	"ID": "20230321141025-ntuvrwv",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230321141025-ntuvrwv",
+		"title": "class BlocksparseMatmulFprop_NC",
+		"updated": "20230321141034"
+	},
+	"Children": [
+		{
+			"ID": "20230321141025-40an96v",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141025-40an96v",
+				"updated": "20230321141025"
+			}
+		},
+		{
+			"ID": "20230321141034-p8wq2m9",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141034-p8wq2m9"
+			}
+		},
+		{
+			"ID": "20230321141034-u2fte62",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141034-u2fte62"
+			}
+		},
+		{
+			"ID": "20230321141034-wrdea5f",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230321141034-wrdea5f",
+				"updated": "20230321141034"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cCTYPE3(TA,TB,TC)\u003e\nclass BlocksparseMatmulFprop_NC : public BlocksparseMatmul_NC\u003cVTYPE3(TA,TB,TC)\u003e\n{\npublic:\n    BlocksparseMatmulFprop_NC(bsmm_params* params) :\n        BlocksparseMatmul_NC\u003cVTYPE3(TA,TB,TC)\u003e(params, \"fprop\", 32, 128) {}\n\n    virtual Status Compute(const TA* A, const TB* B, TC* C)\n    {\n        return this-\u003eXprop_Kernel(A, B, C);\n    }\n};\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

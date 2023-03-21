@@ -1,0 +1,39 @@
+{
+	"ID": "20230320162730-x792ajt",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320162730-x792ajt",
+		"title": "void Compute",
+		"updated": "20230320162736"
+	},
+	"Children": [
+		{
+			"ID": "20230320162730-355el0v",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320162730-355el0v",
+				"updated": "20230320162732"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "void Compute(OpKernelContext* ctx) override {\n\n    TensorShape c_shape({ blocks_, bsize_, bsize_ });\n\n    Tensor* w = nullptr;\n    OP_REQUIRES_OK(ctx, ctx-\u003eallocate_output(0, c_shape, \u0026w));\n\n        float*   w_ptr = w-\u003eflat\u003cfloat\u003e().data();\n    const int* lut_ptr = ctx-\u003einput(0).flat\u003cint32\u003e().data();\n\n    CUstream stream = ((CUDAStream*)ctx-\u003eop_device_context()-\u003estream()-\u003eimplementation())-\u003ecuda_stream();\n\n    IdentityInitCK(stream, w_ptr, lut_ptr, CB_, KB_, blocks_, bsize_, scale_);\n  }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

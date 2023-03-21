@@ -1,0 +1,39 @@
+{
+	"ID": "20230320155413-zup31ut",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320155413-zup31ut",
+		"title": "bool BlocksparseFeatureReduceCN",
+		"updated": "20230320155531"
+	},
+	"Children": [
+		{
+			"ID": "20230320155531-z5462q3",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320155531-z5462q3",
+				"updated": "20230320155531"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "bool BlocksparseFeatureReduceCN(CUstream stream, ehalf* Y, const struct Plist\u003cehalf,8\u003e* X8, uint params, uint C, uint N, uint bshift, uint norm_type)\n{\n    dim3 grid(CEIL_DIV(N, 64), C \u003e\u003e bshift, 1);\n    uint threads = params * 32;\n\n    if (norm_type == MAX_NORM)\n    {\n        if (bshift == 3)\n            blocksparse_feature_reduce_cn\u003c 8,MAX_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, params, N);\n        else if (bshift == 4)\n            blocksparse_feature_reduce_cn\u003c16,MAX_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, params, N);\n        else\n            blocksparse_feature_reduce_cn\u003c32,MAX_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, params, N);\n    }\n    else\n    {\n        if (bshift == 3)\n            blocksparse_feature_reduce_cn\u003c 8, L2_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, params, N);\n        else if (bshift == 4)\n            blocksparse_feature_reduce_cn\u003c16, L2_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, params, N);\n        else\n            blocksparse_feature_reduce_cn\u003c32, L2_NORM\u003e\u003c\u003c\u003cgrid,threads,0,stream\u003e\u003e\u003e(*X8, Y, params, N);\n    }\n    return true;\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

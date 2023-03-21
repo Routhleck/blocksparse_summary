@@ -1,0 +1,54 @@
+{
+	"ID": "20230321140954-ztknqm4",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230321140954-ztknqm4",
+		"title": "class BlocksparseMatmul_NC",
+		"updated": "20230321141011"
+	},
+	"Children": [
+		{
+			"ID": "20230321140955-ir737rn",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321140955-ir737rn",
+				"updated": "20230321140955"
+			}
+		},
+		{
+			"ID": "20230321141011-pq5nvmw",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321141011-pq5nvmw"
+			}
+		},
+		{
+			"ID": "20230321141011-b6kn8mc",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230321141011-b6kn8mc",
+				"updated": "20230321141011"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "template \u003cCTYPE3(TA,TB,TC)\u003e\nclass BlocksparseMatmul_NC : public BlocksparseMatmul\u003cVTYPE3(TA,TB,TC)\u003e\n{\npublic:\n    BlocksparseMatmul_NC(bsmm_params* params, const char* op, int depth, int threads) :\n        BlocksparseMatmul\u003cVTYPE3(TA,TB,TC)\u003e(params), threads_(threads)\n    {\n        const char* dtypeA = std::is_same\u003cTA, ehalf\u003e::value ? \"A10\" : std::is_same\u003cTA, bhalf\u003e::value ? \"A7\": \"A32\";\n        const char* dtypeB = std::is_same\u003cTB, ehalf\u003e::value ? \"B10\" : std::is_same\u003cTB, bhalf\u003e::value ? \"B7\": \"B32\";\n        const char* dtypeC = std::is_same\u003cTC, ehalf\u003e::value ? \"C10\" : std::is_same\u003cTC, bhalf\u003e::value ? \"C7\": \"C32\";\n\n        // int depth;\n        // const char* op;\n        // if      (mode_  == 0) { op = \"fprop\"; depth = 32; threads_ = 128; }\n        // else if (mode_  == 1) { op = \"bprop\"; depth = 32; threads_ = 128; }\n        // else                  { op = \"updat\"; depth =  8; threads_ =  32; }\n\n        char kernel_name[48];\n        sprintf(kernel_name, \"gemm_blocksparse_32x32x%d_%s_%s_%s_%s\", depth, op, dtypeA, dtypeB, dtypeC);\n        kernel_name_ = kernel_name;\n        kernel_ = 0;\n    }\n    Status Xprop_Kernel(const TA* A, const TB* B, TC* C)\n    {\n        GetKernel(kernel_name_, \u0026kernel_);\n        //printf(\"%s %p\\n\", kernel_name_.c_str(), kernel_);\n\n        bsmm_params* params = this-\u003eparams_;\n\n        int gridX = (params-\u003eN \u003e\u003e 5) + ((params-\u003eN \u0026 31) != 0);\n        int gridY = (params-\u003eK \u003e\u003e 5);\n\n        void *args[] = { \u0026params-\u003eLut, \u0026C, \u0026A, \u0026B, \u0026params-\u003ealpha, \u0026params-\u003ebeta, \u0026params-\u003eC, \u0026params-\u003eK, \u0026params-\u003eN };\n\n        CUresult res = cuLaunchKernel(kernel_, gridX, gridY, 1, threads_, 1, 1, params-\u003eshared, params-\u003estream, args, NULL);\n        if (res != CUDA_SUCCESS)\n        {\n            const char* errstr;\n            cuGetErrorString(res, \u0026errstr);\n            return errors::Internal(errstr);\n        }\n        return Status::OK();\n    }\n    virtual Status Compute(const TA* A, const TB* B, TC* C) =0;\n\n    int threads_, gridX_, gridY_;\n    std::string kernel_name_;\n    CUfunction kernel_;\n};\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

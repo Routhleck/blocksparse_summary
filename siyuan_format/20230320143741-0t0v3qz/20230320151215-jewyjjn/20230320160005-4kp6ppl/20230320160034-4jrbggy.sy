@@ -1,0 +1,166 @@
+{
+	"ID": "20230320160034-4jrbggy",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320160034-4jrbggy",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320160034-3q8thsd\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320160034-3q8thsd\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320160034-3q8thsd\u0026quot;,\u0026quot;focusStart\u0026quot;:3531,\u0026quot;focusEnd\u0026quot;:3531}",
+		"title": "Status Compute_Updat",
+		"updated": "20230321155250"
+	},
+	"Children": [
+		{
+			"ID": "20230321154847-g3x4cqv",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321154847-g3x4cqv",
+				"updated": "20230321154928"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "与Compute_Xprop类似\n先是各种判断来确定参数"
+				}
+			]
+		},
+		{
+			"ID": "20230321154929-id0fmxq",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321154929-id0fmxq",
+				"updated": "20230321155006"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "参考如下判断流程根据tensorcores、axis_和blk的值来分别调用不同的核函数"
+				}
+			]
+		},
+		{
+			"ID": "20230321155010-62i5z5e",
+			"Type": "NodeBlockquote",
+			"Properties": {
+				"id": "20230321155010-62i5z5e",
+				"updated": "20230321155250"
+			},
+			"Children": [
+				{
+					"Type": "NodeBlockquoteMarker",
+					"Data": "\u003e"
+				},
+				{
+					"ID": "20230321155154-qaxwpik",
+					"Type": "NodeParagraph",
+					"Properties": {
+						"id": "20230321155154-qaxwpik",
+						"updated": "20230321155250"
+					},
+					"Children": [
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230320154536-mkwtti5",
+							"TextMarkBlockRefSubtype": "s",
+							"TextMarkTextContent": "hgemm_blocksparse_nt_64_dds"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "\n"
+						},
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230320154924-f4evkz2",
+							"TextMarkBlockRefSubtype": "s",
+							"TextMarkTextContent": "hgemm_blocksparse_nt_128_dds"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "\n"
+						},
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230320155020-92w0wgu",
+							"TextMarkBlockRefSubtype": "s",
+							"TextMarkTextContent": "hgemm_blocksparse_tn_dds"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "\n"
+						},
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230320153727-4sea6ff",
+							"TextMarkBlockRefSubtype": "s",
+							"TextMarkTextContent": "BsmmUpdat_CN"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230321155024-8zdyfxh",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230321155024-8zdyfxh",
+				"updated": "20230321155143"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "bWluZG1hcA=="
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "- 判断tensorcores\n  - 有tensorcores\n    - axis_ == 0\n      - modN128 \u0026gt; 0 \u0026amp;\u0026amp; modN128 \u0026lt;= 64\n        - hgemm_blocksparse_nt_64_dds\n      - else\n        - hgemm_blocksparse_nt_128_dds\n    - axis_ != 0\n      - hgemm_blocksparse_tn_dds\n  - 无tensorcores\n    - Gate == NULL且axis_ == 0\n      - BsmmUpdat_CN\u0026lt;NTYPE(T)\u0026gt;\n    - else\n      - 报错(目前只支持fp16)"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320160034-3q8thsd",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320160034-3q8thsd",
+				"updated": "20230320160514"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "Status Compute_Updat(OpKernelContext* ctx)\n    {\n        OpInputList x, dy, gate;\n\n        ctx-\u003einput_list(   \"x\", \u0026x);\n        ctx-\u003einput_list(  \"dy\", \u0026dy);\n        ctx-\u003einput_list(\"gate\", \u0026gate);\n\n        params_.pcount = x.size();\n\n        if (params_.pcount \u003e 8)\n            return errors::Internal(\"No more than 8 inputs allowed.\");\n\n        struct Plist\u003cT1,8\u003e X;\n        struct Plist\u003cT1,8\u003e DY;\n        for (int i = 0; i \u003c params_.pcount; ++i)\n        {\n             X.a[i] = (const T1*) x[i].flat\u003cT\u003e().data();\n            DY.a[i] = (const T1*)dy[i].flat\u003cT\u003e().data();\n        }\n        params_.N = 1;\n        int rank = x[0].dims();\n        for (int i = 0; i \u003c rank; i++)\n            if (i != axis_)\n                params_.N *= x[0].dim_size(i);\n\n        T1* DW;\n        if (params_.beta == 0.0f)\n        {\n            // BlocksparseMatmulDW: [x], [dy], lut, [gate]\n            if (ctx-\u003enum_inputs() != params_.pcount*2 + 1 + gate.size())\n                return errors::Internal(\"with beta=0.0, use BlocksparseMatmulDW \", ctx-\u003enum_inputs());\n\n            Tensor* C;\n            TensorShape shapeC({ params_.blocks, params_.bsize, params_.bsize });\n            Status s = ctx-\u003eallocate_output(0, shapeC, \u0026C);\n            if (!s.ok()) return s;\n            DW = (T1*)C-\u003eflat\u003cT\u003e().data();\n        }\n        else\n        {\n            // BlocksparseMatmulDWA: [x], [dy], lut, dwi, [gate]\n            if (ctx-\u003enum_inputs() != params_.pcount*2 + 2 + gate.size())\n                return errors::Internal(\"with beta!=0.0, use BlocksparseMatmulDWA \", ctx-\u003enum_inputs());\n\n            // accumulate to C in place\n            const Tensor\u0026 C = ctx-\u003einput(params_.pcount*2 + 1);\n            ctx-\u003eset_output(0, C);\n            DW = (T1*)C.flat\u003cT\u003e().data();\n        }\n        params_.Lut  = (const int*)ctx-\u003einput(params_.pcount*2).flat\u003cint64\u003e().data();\n        params_.Gate = gated_dw_ \u0026\u0026 gate.size() \u003e 0 ? gate[0].flat\u003cfloat\u003e().data() : NULL;\n\n        if (is_gpu_)\n            params_.stream = ((CUDAStream*)ctx-\u003eop_device_context()-\u003estream()-\u003eimplementation())-\u003ecuda_stream();\n\n        Benchmark* bench = nullptr;\n        if (bench_) bench = new Benchmark(params_.stream, bench_string_, 0, flops_ * params_.N * params_.pcount, repeat_, is_gpu_);\n\n        cudaError_t res;\n        for (int r = 0; r \u003c repeat_; r++)\n            if (major_ \u003e= 7 \u0026\u0026 std::is_same\u003cT1, ehalf\u003e::value)\n            {\n                if (axis_ == 0)\n                {\n                    int modN128 = params_.N \u0026 127;\n                    if (modN128 \u003e 0 \u0026\u0026 modN128 \u003c= 64)\n                        res = hgemm_blocksparse_nt_64_dds( (const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n                    else\n                        res = hgemm_blocksparse_nt_128_dds((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n                }\n                else\n                    res = hgemm_blocksparse_tn_dds((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n            }\n            else\n            {\n                if (params_.Gate == NULL \u0026\u0026 axis_ == 0)\n                    res = BsmmUpdat_CN\u003cNTYPE(T)\u003e((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n                else\n                    return errors::Internal(\"Gated blocksparse matmul currently only supported on fp16 tensorcores.\");\n                    // res = BsmmGatedUpdat_CN\u003cNTYPE(T)\u003e((const T1*)\u0026X, (const T1*)\u0026DY, DW, \u0026params_);\n            }\n\n        if (bench) delete bench;\n\n        if (cudaSuccess != res)\n            return errors::Internal(cudaGetErrorString(res));\n        return Status::OK();\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230321152336-4txfypz",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321152336-4txfypz"
+			}
+		}
+	]
+}

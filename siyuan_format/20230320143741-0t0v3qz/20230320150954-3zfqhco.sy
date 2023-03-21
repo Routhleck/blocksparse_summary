@@ -1,0 +1,80 @@
+{
+	"ID": "20230320150954-3zfqhco",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230320150954-3zfqhco",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151016-lw3szgr\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151017-nxqyq2k\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151016-lw3szgr\u0026quot;,\u0026quot;focusStart\u0026quot;:3,\u0026quot;focusEnd\u0026quot;:3}",
+		"title": "static void ClosestDivisorTo4",
+		"updated": "20230321145431"
+	},
+	"Children": [
+		{
+			"ID": "20230321145300-mosn1pl",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321145300-mosn1pl",
+				"updated": "20230321145431"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "找到一个最接近某个数的能被 4 整除的数，同时返回这个数除以这个最接近数的商和余数。"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "strong",
+					"TextMarkTextContent": "确定blk_a、blk_A、blk_b、blk_B"
+				}
+			]
+		},
+		{
+			"ID": "20230321145319-gguilns",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321145319-gguilns",
+				"updated": "20230321145319"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "具体实现是先判断这个数是否能被 4 整除，如果可以则直接返回 4 和商；如果不行，则按照一定的顺序依次尝试除以  3、5、2、7，找到能整除的数字并返回对应的商和除数。如果都不能整除，那么如果这个数是被用来计算矩阵乘法中的矩阵  A，那么就把这个数作为除数，商为 1；否则就把这个数作为商，除数为 1。"
+				}
+			]
+		},
+		{
+			"ID": "20230320151016-lw3szgr",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230320151016-lw3szgr",
+				"updated": "20230320151018"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "static void ClosestDivisorTo4(uint val, bool isA, uint* div, uint* res)\n{\n         if ((val % 4) == 0) { *div = 4; *res = val / 4; }\n    else if ((val % 3) == 0) { *div = 3; *res = val / 3; }\n    else if ((val % 5) == 0) { *div = 5; *res = val / 5; }\n    else if ((val % 2) == 0) { *div = 2; *res = val / 2; }\n    else if ((val % 7) == 0) { *div = 7; *res = val / 7; }\n    else if (isA) { *div = val; *res =   1; }\n    else          { *div = 1;   *res = val; }\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230320151017-nxqyq2k",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230320151017-nxqyq2k"
+			}
+		}
+	]
+}
