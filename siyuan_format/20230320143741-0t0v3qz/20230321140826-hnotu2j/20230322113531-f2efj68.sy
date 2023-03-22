@@ -1,0 +1,60 @@
+{
+	"ID": "20230322113531-f2efj68",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322113531-f2efj68",
+		"title": "~BlocksparseMatmul",
+		"updated": "20230322113610"
+	},
+	"Children": [
+		{
+			"ID": "20230322113548-0ghndi2",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322113548-0ghndi2",
+				"updated": "20230322113610"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "虚函数，析构函数"
+				}
+			]
+		},
+		{
+			"ID": "20230322113531-yd7ri5r",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322113531-yd7ri5r",
+				"updated": "20230322113542"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "virtual ~BlocksparseMatmul() {}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322113605-awalz39",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322113605-awalz39"
+			}
+		}
+	]
+}

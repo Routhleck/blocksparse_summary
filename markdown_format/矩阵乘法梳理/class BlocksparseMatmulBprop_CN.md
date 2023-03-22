@@ -1,16 +1,14 @@
 ---
 title: class BlocksparseMatmulBprop_CN
 date: 2023-03-21T14:09:14Z
-lastmod: 2023-03-21T14:09:29Z
+lastmod: 2023-03-22T15:07:33Z
 ---
 
 # class BlocksparseMatmulBprop_CN
 
-‍
+继承自父类BlocksparseMatmul，并实现反向传播操作
 
-‍
-
-‍
+基本与父类一致，仅仅实现了Compute函数
 
 ```cpp
 template <CTYPE3(TA,TB,TC)>

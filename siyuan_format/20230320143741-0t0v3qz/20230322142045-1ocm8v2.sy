@@ -1,0 +1,46 @@
+{
+	"ID": "20230322142045-1ocm8v2",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322142045-1ocm8v2",
+		"title": "int GetCountSMsVersion",
+		"updated": "20230322142214"
+	},
+	"Children": [
+		{
+			"ID": "20230322142213-4xo7k54",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322142213-4xo7k54",
+				"updated": "20230322142213"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "int GetCountSMsVersion(int* major, int* minor)\n{\n    CUdevice device; int count;\n    cuCtxGetDevice(\u0026device);\n    cuDeviceGetAttribute(\u0026count, CU_DEVICE_ATTRIBUTE_MULTIPROCESSOR_COUNT, device);\n    if (major != NULL)\n        cuDeviceGetAttribute(major, CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MAJOR, device);\n    if (minor != NULL)\n        cuDeviceGetAttribute(minor, CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MINOR, device);\n    return count;\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322142214-8ytmp4o",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322142214-8ytmp4o"
+			}
+		}
+	]
+}

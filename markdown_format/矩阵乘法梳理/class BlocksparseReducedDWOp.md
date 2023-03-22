@@ -1,7 +1,7 @@
 ---
 title: class BlocksparseReducedDWOp
 date: 2023-03-20T15:34:44Z
-lastmod: 2023-03-20T16:34:42Z
+lastmod: 2023-03-22T14:57:52Z
 ---
 
 # class BlocksparseReducedDWOp
@@ -16,15 +16,15 @@ lastmod: 2023-03-20T16:34:42Z
 # 成员变量
 
 |成员变量|类型|说明|
-| ----------| ------| --------------------------------------|
-|​`bshift`​|​`int`​|用于指定块的大小，根据`bsize`​属性计算得出|
-|​`norm`​|​`int`​|指定是否进行归一化|
-|​`axis`​|​`int`​|指定计算的轴，只支持 0 或 1|
-|​`major_version`​|​`int`​|指定 Tensorcore GPU 的版本|
-|​`blk_A`​|​`uint`​|用于 cuBLAS 中的 GEMM 计算|
-|​`blk_B`​|​`uint`​|用于 cuBLAS 中的 GEMM 计算|
-|​`blk_a`​|​`uint`​|用于 cuBLAS 中的 GEMM 计算|
-|​`blk_b`​|​`uint`​|用于 cuBLAS 中的 GEMM 计算|
+| ---------------------| ------------| ----------------------------------------|
+|​bshift​​|​int​​|用于指定块的大小，根据`bsize`​​属性计算得出|
+|​norm​​|​int​​|指定是否进行归一化|
+|​axis​​|​int​​|指定计算的轴，只支持 0 或 1|
+|​major_version​​|​int​​|指定 Tensorcore GPU 的版本|
+|​blk_A​​|​uint​​|用于 cuBLAS 中的 GEMM 计算|
+|​blk_B​​|​uint​​|用于 cuBLAS 中的 GEMM 计算|
+|​blk_a​​|​uint​​|用于 cuBLAS 中的 GEMM 计算|
+|​blk_b​​|​uint​​|用于 cuBLAS 中的 GEMM 计算|
 
 # 具体代码
 

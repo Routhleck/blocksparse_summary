@@ -1,10 +1,12 @@
 ---
 title: bool BlocksparseGateGrad
 date: 2023-03-20T15:51:19Z
-lastmod: 2023-03-20T15:51:47Z
+lastmod: 2023-03-21T16:55:12Z
 ---
 
 # bool BlocksparseGateGrad
+
+根据不同的bsize来使用不同的线程数调用blocksparse_gate_grad(blocksparse_hgemm_cn_64_op_gpu.cu)
 
 ```cpp
 template <typename T>

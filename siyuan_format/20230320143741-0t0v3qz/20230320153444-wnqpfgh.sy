@@ -4,9 +4,9 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230320153444-wnqpfgh",
-		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320153456-ibrnlt0\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320153444-3i3lbz3\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320153456-ibrnlt0\u0026quot;,\u0026quot;focusStart\u0026quot;:3,\u0026quot;focusEnd\u0026quot;:3}",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320161952-vdqrg88\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320153444-3i3lbz3\u0026quot;,\u0026quot;scrollTop\u0026quot;:106,\u0026quot;focusId\u0026quot;:\u0026quot;20230320162935-kzxzz9o\u0026quot;,\u0026quot;focusStart\u0026quot;:8,\u0026quot;focusEnd\u0026quot;:8}",
 		"title": "class BlocksparseReducedDWOp",
-		"updated": "20230320163442"
+		"updated": "20230322145752"
 	},
 	"Children": [
 		{
@@ -190,7 +190,7 @@
 			"Properties": {
 				"colgroup": "||",
 				"id": "20230320162935-kzxzz9o",
-				"updated": "20230320162935"
+				"updated": "20230322145752"
 			},
 			"Children": [
 				{
@@ -245,16 +245,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "bshift"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​bshift​​"
 								}
 							]
 						},
@@ -264,16 +255,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -292,7 +274,7 @@
 								},
 								{
 									"Type": "NodeText",
-									"Data": "​属性计算得出"
+									"Data": "​​属性计算得出"
 								}
 							]
 						}
@@ -308,16 +290,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "norm"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​norm​​"
 								}
 							]
 						},
@@ -327,16 +300,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -362,16 +326,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "axis"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​axis​​"
 								}
 							]
 						},
@@ -381,16 +336,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -416,16 +362,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "major_version"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​major_version​​"
 								}
 							]
 						},
@@ -435,16 +372,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -470,16 +398,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "blk_A"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​blk_A​​"
 								}
 							]
 						},
@@ -489,16 +408,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "uint"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​uint​​"
 								}
 							]
 						},
@@ -524,16 +434,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "blk_B"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​blk_B​​"
 								}
 							]
 						},
@@ -543,16 +444,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "uint"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​uint​​"
 								}
 							]
 						},
@@ -578,16 +470,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "blk_a"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​blk_a​​"
 								}
 							]
 						},
@@ -597,16 +480,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "uint"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​uint​​"
 								}
 							]
 						},
@@ -632,16 +506,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "blk_b"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​blk_b​​"
 								}
 							]
 						},
@@ -651,16 +516,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "uint"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​uint​​"
 								}
 							]
 						},

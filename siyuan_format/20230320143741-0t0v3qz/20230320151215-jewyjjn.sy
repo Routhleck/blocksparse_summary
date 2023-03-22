@@ -4,11 +4,25 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230320151215-jewyjjn",
-		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320160252-srdeecu\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151236-2zue65i\u0026quot;,\u0026quot;scrollTop\u0026quot;:353,\u0026quot;focusId\u0026quot;:\u0026quot;20230320163550-ov9kf77\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230321161802-29ozl2r\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151236-2zue65i\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320160319-3sfq13k\u0026quot;,\u0026quot;focusStart\u0026quot;:13,\u0026quot;focusEnd\u0026quot;:24}",
 		"title": "class BlocksparseMatmulOp",
-		"updated": "20230321144645"
+		"updated": "20230322145637"
 	},
 	"Children": [
+		{
+			"ID": "20230321161802-29ozl2r",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321161802-29ozl2r",
+				"updated": "20230321161831"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "主要为前向、后向传播与更新的计算"
+				}
+			]
+		},
 		{
 			"ID": "20230320160252-srdeecu",
 			"Type": "NodeHeading",
@@ -35,7 +49,7 @@
 			"Properties": {
 				"colgroup": "||",
 				"id": "20230320155859-e1v2irl",
-				"updated": "20230320163346"
+				"updated": "20230321155617"
 			},
 			"Children": [
 				{
@@ -167,11 +181,8 @@
 							"Data": "td",
 							"Children": [
 								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "block-ref",
-									"TextMarkBlockRefID": "20230320160023-ekrpl72",
-									"TextMarkBlockRefSubtype": "s",
-									"TextMarkTextContent": "Status Compute_Xprop"
+									"Type": "NodeText",
+									"Data": "Status Compute_Xprop"
 								}
 							]
 						},
@@ -191,7 +202,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "前向传播函数，执行稀疏矩阵乘法操作"
+									"Data": "传播函数，执行稀疏矩阵前向或后向传播操作"
 								}
 							]
 						}
@@ -206,11 +217,8 @@
 							"Data": "td",
 							"Children": [
 								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "block-ref",
-									"TextMarkBlockRefID": "20230320160034-4jrbggy",
-									"TextMarkBlockRefSubtype": "s",
-									"TextMarkTextContent": "Status Compute_Updat"
+									"Type": "NodeText",
+									"Data": "Status Compute_Updat"
 								}
 							]
 						},
@@ -230,7 +238,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "反向传播函数，执行稀疏矩阵乘法的梯度计算"
+									"Data": "更新函数，执行稀疏矩阵乘法的更新操作"
 								}
 							]
 						}
@@ -264,7 +272,7 @@
 			"Properties": {
 				"colgroup": "||",
 				"id": "20230320160319-3sfq13k",
-				"updated": "20230321144645"
+				"updated": "20230322145637"
 			},
 			"Children": [
 				{
@@ -340,16 +348,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "bsmm_params params_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​params_​​"
 								}
 							]
 						},
@@ -358,8 +357,11 @@
 							"Data": "td",
 							"Children": [
 								{
-									"Type": "NodeText",
-									"Data": "bsmm_params"
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230322113917-npflb1b",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "bsmm_params"
 								}
 							]
 						},
@@ -385,16 +387,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "axis_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​axis_​​"
 								}
 							]
 						},
@@ -423,7 +416,7 @@
 								},
 								{
 									"Type": "NodeText",
-									"Data": "​ 的输出形状。"
+									"Data": "​​ 的输出形状。"
 								},
 								{
 									"Type": "NodeBr",
@@ -443,16 +436,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "bench_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​bench_​​"
 								}
 							]
 						},
@@ -488,16 +472,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "repeat_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​repeat_​​"
 								}
 							]
 						},
@@ -533,16 +508,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "SMs_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​SMs_​​"
 								}
 							]
 						},
@@ -578,16 +544,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "major_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​major_​​"
 								}
 							]
 						},
@@ -623,16 +580,16 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​"
 								},
 								{
 									"Type": "NodeTextMark",
-									"TextMarkType": "code s",
+									"TextMarkType": "s",
 									"TextMarkTextContent": "grid_n_"
 								},
 								{
 									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​"
 								}
 							]
 						},
@@ -670,16 +627,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "flops_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​flops_​​"
 								}
 							]
 						},
@@ -715,16 +663,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "gated_dw_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​gated_dw_​​"
 								}
 							]
 						},
@@ -760,16 +699,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "is_gpu_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​is_gpu_​​"
 								}
 							]
 						},
@@ -805,16 +735,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "bench_string_[256]"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​bench_string_[256]​​"
 								}
 							]
 						},
@@ -841,28 +762,6 @@
 					]
 				}
 			]
-		},
-		{
-			"ID": "20230320163529-320vq7n",
-			"Type": "NodeHeading",
-			"HeadingLevel": 1,
-			"Properties": {
-				"id": "20230320163529-320vq7n",
-				"updated": "20230320163549"
-			},
-			"Children": [
-				{
-					"Type": "NodeText",
-					"Data": "调用函数"
-				}
-			]
-		},
-		{
-			"ID": "20230320163550-ov9kf77",
-			"Type": "NodeParagraph",
-			"Properties": {
-				"id": "20230320163550-ov9kf77"
-			}
 		},
 		{
 			"ID": "20230320160407-6r9tlxl",

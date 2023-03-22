@@ -4,11 +4,25 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230320151552-p2wno7i",
-		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151612-iyoilda\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151612-iyoilda\u0026quot;,\u0026quot;scrollTop\u0026quot;:8,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151612-iyoilda\u0026quot;,\u0026quot;focusStart\u0026quot;:3,\u0026quot;focusEnd\u0026quot;:3}",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230321170903-c1gzpxk\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230321170745-auwbcb8\u0026quot;,\u0026quot;scrollTop\u0026quot;:220,\u0026quot;focusId\u0026quot;:\u0026quot;20230320163512-6lr6c14\u0026quot;,\u0026quot;focusStart\u0026quot;:103,\u0026quot;focusEnd\u0026quot;:108}",
 		"title": "class BlocksparseMatmulIdentityInitOp",
-		"updated": "20230320163512"
+		"updated": "20230322145722"
 	},
 	"Children": [
+		{
+			"ID": "20230321170903-c1gzpxk",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321170903-c1gzpxk",
+				"updated": "20230321170904"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "初始化神经网络中的权重矩阵"
+				}
+			]
+		},
 		{
 			"ID": "20230320162644-1j23iyl",
 			"Type": "NodeHeading",
@@ -294,7 +308,7 @@
 			"Properties": {
 				"colgroup": "||",
 				"id": "20230320163512-6lr6c14",
-				"updated": "20230320163512"
+				"updated": "20230322145722"
 			},
 			"Children": [
 				{
@@ -349,16 +363,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "blocks_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​blocks_​​"
 								}
 							]
 						},
@@ -368,16 +373,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -403,16 +399,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "bsize_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​bsize_​​"
 								}
 							]
 						},
@@ -422,16 +409,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -457,16 +435,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "CB_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​CB_​​"
 								}
 							]
 						},
@@ -476,16 +445,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -511,16 +471,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "KB_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​KB_​​"
 								}
 							]
 						},
@@ -530,16 +481,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "int"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​int​​"
 								}
 							]
 						},
@@ -565,16 +507,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "scale_"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​scale_​​"
 								}
 							]
 						},
@@ -584,16 +517,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "float"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​float​​"
 								}
 							]
 						},
@@ -652,6 +576,13 @@
 					"Data": "```"
 				}
 			]
+		},
+		{
+			"ID": "20230321170745-auwbcb8",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321170745-auwbcb8"
+			}
 		}
 	]
 }

@@ -1,10 +1,12 @@
 ---
 title: class BlocksparseMatmulIdentityInitOp
 date: 2023-03-20T15:15:52Z
-lastmod: 2023-03-20T16:35:12Z
+lastmod: 2023-03-22T14:57:22Z
 ---
 
 # class BlocksparseMatmulIdentityInitOp
+
+初始化神经网络中的权重矩阵
 
 # 成员方法
 
@@ -16,12 +18,12 @@ lastmod: 2023-03-20T16:35:12Z
 # 成员变量
 
 |成员变量|类型|说明|
-| ----------| ------| ----------------------------|
-|​`blocks_`​|​`int`​|矩阵分块的数量|
-|​`bsize_`​|​`int`​|每个分块矩阵的大小|
-|​`CB_`​|​`int`​|输入矩阵的列数|
-|​`KB_`​|​`int`​|输入矩阵的行数|
-|​`scale_`​|​`float`​|初始化对角线元素的比例因子|
+| ---------------| -------------| ----------------------------|
+|​blocks_​​|​int​​|矩阵分块的数量|
+|​bsize_​​|​int​​|每个分块矩阵的大小|
+|​CB_​​|​int​​|输入矩阵的列数|
+|​KB_​​|​int​​|输入矩阵的行数|
+|​scale_​​|​float​​|初始化对角线元素的比例因子|
 
 # 具体代码
 
@@ -57,3 +59,5 @@ class BlocksparseMatmulIdentityInitOp : public OpKernel {
   float scale_;
 };
 ```
+
+‍

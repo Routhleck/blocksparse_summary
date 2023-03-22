@@ -1,16 +1,14 @@
 ---
 title: class BlocksparseMatmulUpdat_CN
 date: 2023-03-21T14:09:41Z
-lastmod: 2023-03-21T14:09:50Z
+lastmod: 2023-03-22T15:08:48Z
 ---
 
 # class BlocksparseMatmulUpdat_CN
 
-‍
+继承自父类BlocksparseMatmul，并实现更新参数操作
 
-‍
-
-‍
+基本与父类一致，仅仅实现了Compute函数
 
 ```cpp
 template <CTYPE3(TA,TB,TC)>

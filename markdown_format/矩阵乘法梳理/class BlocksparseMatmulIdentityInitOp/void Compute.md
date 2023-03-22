@@ -1,10 +1,13 @@
 ---
 title: void Compute
 date: 2023-03-20T16:27:30Z
-lastmod: 2023-03-20T16:27:36Z
+lastmod: 2023-03-21T17:11:58Z
 ---
 
 # void Compute
+
+实现了具体的计算逻辑  
+调用 CUDA 函数IdentityInitCK来生成权重矩阵并将其存储在输出张量 `w`​ 中。
 
 ```cpp
 void Compute(OpKernelContext* ctx) override {
@@ -22,3 +25,5 @@ void Compute(OpKernelContext* ctx) override {
     IdentityInitCK(stream, w_ptr, lut_ptr, CB_, KB_, blocks_, bsize_, scale_);
   }
 ```
+
+‍

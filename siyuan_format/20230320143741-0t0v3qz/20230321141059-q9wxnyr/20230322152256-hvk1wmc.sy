@@ -1,0 +1,175 @@
+{
+	"ID": "20230322152256-hvk1wmc",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322152256-hvk1wmc",
+		"title": "Status Compute",
+		"updated": "20230322152409"
+	},
+	"Children": [
+		{
+			"ID": "20230322152256-mq8s7kf",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322152256-mq8s7kf",
+				"updated": "20230322152400"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "​"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "Compute"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 函数接收三个参数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "A"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​、"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "B"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "C"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，它们分别表示反向传播操作中的梯度、权重和误差。在这个函数中，"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "A"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "B"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 的类型为 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "TA"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "TB"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，但是它们实际上被转换为了 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "plist8\u0026lt;TA\u0026gt;"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "plist8\u0026lt;TB\u0026gt;"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，因为在反向传播操作中，矩阵 A 和 B 是按列划分成了 8 个部分，每个部分包含 32 行。因此，在执行反向传播操作时，需要使用这些列向量。"
+				}
+			]
+		},
+		{
+			"ID": "20230322152401-vhyygk7",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322152401-vhyygk7",
+				"updated": "20230322152409"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "接下来，"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "Compute"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 函数获取了当前对象中保存的 CUDA kernel，并将输入参数和 CUDA kernel 的参数打包在一起。然后，它使用 CUDA runtime API 中的 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "cuLaunchKernel"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 函数来启动 CUDA kernel。"
+				}
+			]
+		},
+		{
+			"ID": "20230322152312-ey0dvm0",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322152312-ey0dvm0",
+				"updated": "20230322152314"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "virtual Status Compute(const TA* A, const TB* B, TC* C)\n    {\n        struct plist8\u003cTA\u003e* pA = (struct plist8\u003cTA\u003e*)A;\n        struct plist8\u003cTB\u003e* pB = (struct plist8\u003cTB\u003e*)B;\n        bsmm_params* params = this-\u003eparams_;\n        int pcount = params-\u003epcount * 8;\n\n        //printf(\"%p %p %p %p %d %d\\n\", pA-\u003ea[0], pB-\u003ea[0], L, C, N, params);\n\n        GetKernel(this-\u003ekernel_name_, \u0026this-\u003ekernel_);\n        //printf(\"%s %p\\n\", kernel_name_.c_str(), kernel_);\n\n        void *args[] = { pA, pB, \u0026params-\u003eLut, \u0026C, \u0026params-\u003ealpha, \u0026params-\u003ebeta, \u0026params-\u003eC, \u0026params-\u003eK, \u0026params-\u003eN, \u0026pcount };\n\n        CUresult res = cuLaunchKernel(this-\u003ekernel_, params-\u003eblocks, 1, 1, this-\u003ethreads_, 1, 1, params-\u003eshared, params-\u003estream, args, NULL);\n        if (res != CUDA_SUCCESS)\n        {\n            const char* errstr;\n            cuGetErrorString(res, \u0026errstr);\n            return errors::Internal(errstr);\n        }\n        return Status::OK();\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

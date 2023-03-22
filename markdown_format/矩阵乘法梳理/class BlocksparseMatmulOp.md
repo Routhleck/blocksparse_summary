@@ -1,10 +1,12 @@
 ---
 title: class BlocksparseMatmulOp
 date: 2023-03-20T15:12:15Z
-lastmod: 2023-03-21T14:46:45Z
+lastmod: 2023-03-22T14:56:37Z
 ---
 
 # class BlocksparseMatmulOp
+
+主要为前向、后向传播与更新的计算
 
 # 成员方法
 
@@ -12,28 +14,24 @@ lastmod: 2023-03-21T14:46:45Z
 | ----------------------| ----------| ---------------------------------------------------------------|
 |BlocksparseMatmulOp|构造函数|构造函数，用于创建 BlocksparseMatmulOp 对象|
 |Compute|void|重载 OpKernel 的 Compute 函数，用于执行前向传播或反向传播操作|
-|Status Compute_Xprop|Status|前向传播函数，执行稀疏矩阵乘法操作|
-|Status Compute_Updat|Status|反向传播函数，执行稀疏矩阵乘法的梯度计算|
+|Status Compute_Xprop|Status|传播函数，执行稀疏矩阵前向或后向传播操作|
+|Status Compute_Updat|Status|更新函数，执行稀疏矩阵乘法的更新操作|
 
 # 成员变量
 
 |成员变量 |变量类型 |说明 |
-| -----------| --------------------------------------------------------------| -------|
-|​`bsmm_params params_`​|bsmm_params|稀疏矩阵乘法的参数|
-|​`axis_`​|int|用于指定进行矩阵乘法运算的维度以及计算张量 `C`​ 的输出形状。<br />|
-|​`bench_`​|int|benchmark循环次数|
-|​`repeat_`​|int|向前传递、向后传递次数|
-|​`SMs_`​|int|SM核心数量|
-|​`major_`​|int|CUDA主版本号|
-|​~~`grid_n_`~~​|~~int~~|~~CUDA网格数量？没有用到~~|
-|​`flops_`​|float|用于记录浮点运算次数，用于性能评测|
-|​`gated_dw_`​|bool|用于记录是否进行 gated 操作|
-|​`is_gpu_`​|bool|是否有GPU|
-|​`bench_string_[256]`​|char|benchmark名字|
-
-# 调用函数
-
-‍
+| ----------------------------| ----------------------------------------------------------------| -------|
+|​​params_​​|bsmm_params|稀疏矩阵乘法的参数|
+|​axis_​​|int|用于指定进行矩阵乘法运算的维度以及计算张量 `C`​​ 的输出形状。<br />|
+|​​bench_​​|int|benchmark循环次数|
+|​​repeat_​​|int|向前传递、向后传递次数|
+|​​SMs_​​|int|SM核心数量|
+|​​major_​​|int|CUDA主版本号|
+|​​~~grid_n_~~​​|~~int~~|~~CUDA网格数量？没有用到~~|
+|​​flops_​​|float|用于记录浮点运算次数，用于性能评测|
+|​​gated_dw_​​|bool|用于记录是否进行 gated 操作|
+|​​is_gpu_​​|bool|是否有GPU|
+|​​bench_string_[256]​​|char|benchmark名字|
 
 # 具体代码
 

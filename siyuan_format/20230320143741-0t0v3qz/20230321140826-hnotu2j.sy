@@ -4,24 +4,425 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230321140826-hnotu2j",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230322112134-wxcljuk\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230321140850-2rmw9kh\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230321140850-2rmw9kh\u0026quot;,\u0026quot;focusStart\u0026quot;:3,\u0026quot;focusEnd\u0026quot;:3}",
 		"title": "class BlocksparseMatmul",
-		"updated": "20230321140850"
+		"updated": "20230322145526"
 	},
 	"Children": [
 		{
-			"ID": "20230321140826-n93l29p",
+			"ID": "20230322112134-wxcljuk",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321140826-n93l29p",
-				"updated": "20230321140826"
-			}
+				"id": "20230322112134-wxcljuk",
+				"updated": "20230322142904"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "基类，由子类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140901-iswlbm8",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmulFprop_CN"
+				},
+				{
+					"Type": "NodeText",
+					"Data": ", "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140914-od8tb6d",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmulBprop_CN"
+				},
+				{
+					"Type": "NodeText",
+					"Data": ", "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140941-eyq3bsp",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul_NC"
+				},
+				{
+					"Type": "NodeText",
+					"Data": ", 以及另一个"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140954-ztknqm4",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul_NC"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "继承(此类也是用作基类，被其他类继承)"
+				}
+			]
 		},
 		{
-			"ID": "20230321140850-7ln44vl",
-			"Type": "NodeParagraph",
+			"ID": "20230321140826-n93l29p",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
 			"Properties": {
-				"id": "20230321140850-7ln44vl"
-			}
+				"id": "20230321140826-n93l29p",
+				"updated": "20230322111954"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "成员方法"
+				}
+			]
+		},
+		{
+			"ID": "20230322112051-98hy817",
+			"Type": "NodeTable",
+			"TableAligns": [
+				0,
+				0,
+				0
+			],
+			"Properties": {
+				"colgroup": "||",
+				"id": "20230322112051-98hy817",
+				"updated": "20230322113757"
+			},
+			"Children": [
+				{
+					"Type": "NodeTableHead",
+					"Data": "thead",
+					"Children": [
+						{
+							"Type": "NodeTableRow",
+							"Data": "tr",
+							"Children": [
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "成员方法"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "返回类型"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "说明"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230322113435-a7xjlzm",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "BlocksparseMatmul"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "构造函数"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "构造函数，初始化类成员变量"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230322113531-f2efj68",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "~BlocksparseMatmul"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "析构函数"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "析构函数"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230322113616-wmg2hj1",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "Compute"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "status"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "矩阵乘法计算"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230322111954-qqzy98c",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230322111954-qqzy98c",
+				"updated": "20230322111958"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "成员变量"
+				}
+			]
+		},
+		{
+			"ID": "20230322113808-y97ok41",
+			"Type": "NodeTable",
+			"TableAligns": [
+				0,
+				0,
+				0
+			],
+			"Properties": {
+				"colgroup": "||",
+				"id": "20230322113808-y97ok41",
+				"updated": "20230322145526"
+			},
+			"Children": [
+				{
+					"Type": "NodeTableHead",
+					"Data": "thead",
+					"Children": [
+						{
+							"Type": "NodeTableRow",
+							"Data": "tr",
+							"Children": [
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "成员变量"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "类型"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "说明"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "params"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeTextMark",
+									"TextMarkType": "block-ref",
+									"TextMarkBlockRefID": "20230322113917-npflb1b",
+									"TextMarkBlockRefSubtype": "s",
+									"TextMarkTextContent": "bsmm_params"
+								},
+								{
+									"Type": "NodeText",
+									"Data": "*"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "参数结构体"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "major_"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "int"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "CUDA主版本号"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230322111958-syodk49",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230322111958-syodk49",
+				"updated": "20230322112001"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "具体代码"
+				}
+			]
 		},
 		{
 			"ID": "20230321140850-2rmw9kh",

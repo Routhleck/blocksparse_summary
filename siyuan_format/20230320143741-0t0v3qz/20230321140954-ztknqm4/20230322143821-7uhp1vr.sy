@@ -1,0 +1,85 @@
+{
+	"ID": "20230322143821-7uhp1vr",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322143821-7uhp1vr",
+		"title": "Status Xprop_Kernel",
+		"updated": "20230322143858"
+	},
+	"Children": [
+		{
+			"ID": "20230322143854-gq75vma",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322143854-gq75vma",
+				"updated": "20230322143858"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "执行Kernel"
+				}
+			]
+		},
+		{
+			"ID": "20230322143839-gyva6q9",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322143839-gyva6q9",
+				"updated": "20230322143853"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "首先根据成员变量 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "kernel_name_"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 CUDA context，获取对应的 CUDA kernel，并计算出 kernel 执行时需要的参数。然后使用 CUDA API "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "cuLaunchKernel"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 函数执行 kernel。"
+				}
+			]
+		},
+		{
+			"ID": "20230322143821-41knl7f",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322143821-41knl7f",
+				"updated": "20230322143830"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "Status Xprop_Kernel(const TA* A, const TB* B, TC* C)\n    {\n        GetKernel(kernel_name_, \u0026kernel_);\n        //printf(\"%s %p\\n\", kernel_name_.c_str(), kernel_);\n\n        bsmm_params* params = this-\u003eparams_;\n\n        int gridX = (params-\u003eN \u003e\u003e 5) + ((params-\u003eN \u0026 31) != 0);\n        int gridY = (params-\u003eK \u003e\u003e 5);\n\n        void *args[] = { \u0026params-\u003eLut, \u0026C, \u0026A, \u0026B, \u0026params-\u003ealpha, \u0026params-\u003ebeta, \u0026params-\u003eC, \u0026params-\u003eK, \u0026params-\u003eN };\n\n        CUresult res = cuLaunchKernel(kernel_, gridX, gridY, 1, threads_, 1, 1, params-\u003eshared, params-\u003estream, args, NULL);\n        if (res != CUDA_SUCCESS)\n        {\n            const char* errstr;\n            cuGetErrorString(res, \u0026errstr);\n            return errors::Internal(errstr);\n        }\n        return Status::OK();\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

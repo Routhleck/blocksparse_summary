@@ -4,8 +4,9 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230321141025-ntuvrwv",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230321141025-40an96v\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230321141034-wrdea5f\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230321141025-40an96v\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
 		"title": "class BlocksparseMatmulFprop_NC",
-		"updated": "20230321141034"
+		"updated": "20230322152013"
 	},
 	"Children": [
 		{
@@ -13,22 +14,91 @@
 			"Type": "NodeParagraph",
 			"Properties": {
 				"id": "20230321141025-40an96v",
-				"updated": "20230321141025"
-			}
+				"updated": "20230322151321"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "继承自父类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140954-ztknqm4",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul_NC"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "，并实现向前传播操作"
+				}
+			]
+		},
+		{
+			"ID": "20230322151256-k5lrqoc",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322151256-k5lrqoc",
+				"updated": "20230322151516"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "与父类基本一致，不同之处在于它的构造函数调用了父类的构造函数，并传递了参数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "\u0026quot;fprop\u0026quot;"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​、"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "32"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "128"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，这些参数指定了稀疏矩阵乘法中使用的 CUDA kernel 的操作类型、深度和线程数。"
+				}
+			]
 		},
 		{
 			"ID": "20230321141034-p8wq2m9",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141034-p8wq2m9"
-			}
-		},
-		{
-			"ID": "20230321141034-u2fte62",
-			"Type": "NodeParagraph",
-			"Properties": {
-				"id": "20230321141034-u2fte62"
-			}
+				"id": "20230321141034-p8wq2m9",
+				"updated": "20230322152013"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "同时重写了"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230322151606-m20c7ro",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "Compute"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "函数"
+				}
+			]
 		},
 		{
 			"ID": "20230321141034-wrdea5f",

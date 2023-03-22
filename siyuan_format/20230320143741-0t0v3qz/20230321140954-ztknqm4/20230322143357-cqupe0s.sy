@@ -1,0 +1,105 @@
+{
+	"ID": "20230322143357-cqupe0s",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322143357-cqupe0s",
+		"title": "BlocksparseMatmul_NC",
+		"updated": "20230322143656"
+	},
+	"Children": [
+		{
+			"ID": "20230322143439-5v4qd2r",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322143439-5v4qd2r",
+				"updated": "20230322143652"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "构造函数,先调用基类的构造函数，对成员变量 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "params_"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 进行初始化。然后根据输入参数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "op"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​、"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "depth"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和数据类型，计算出对应的 CUDA kernel 名称，并将其保存在类成员变量 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "kernel_name_"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 中。最后，根据 CUDA kernel 名称和 CUDA context，获取对应的 CUDA kernel 并保存在类成员变量 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "kernel_"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 中。"
+				}
+			]
+		},
+		{
+			"ID": "20230322143357-3cwmhwh",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322143357-3cwmhwh",
+				"updated": "20230322143401"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "BlocksparseMatmul_NC(bsmm_params* params, const char* op, int depth, int threads) :\n        BlocksparseMatmul\u003cVTYPE3(TA,TB,TC)\u003e(params), threads_(threads)\n    {\n        const char* dtypeA = std::is_same\u003cTA, ehalf\u003e::value ? \"A10\" : std::is_same\u003cTA, bhalf\u003e::value ? \"A7\": \"A32\";\n        const char* dtypeB = std::is_same\u003cTB, ehalf\u003e::value ? \"B10\" : std::is_same\u003cTB, bhalf\u003e::value ? \"B7\": \"B32\";\n        const char* dtypeC = std::is_same\u003cTC, ehalf\u003e::value ? \"C10\" : std::is_same\u003cTC, bhalf\u003e::value ? \"C7\": \"C32\";\n\n        // int depth;\n        // const char* op;\n        // if      (mode_  == 0) { op = \"fprop\"; depth = 32; threads_ = 128; }\n        // else if (mode_  == 1) { op = \"bprop\"; depth = 32; threads_ = 128; }\n        // else                  { op = \"updat\"; depth =  8; threads_ =  32; }\n\n        char kernel_name[48];\n        sprintf(kernel_name, \"gemm_blocksparse_32x32x%d_%s_%s_%s_%s\", depth, op, dtypeA, dtypeB, dtypeC);\n        kernel_name_ = kernel_name;\n        kernel_ = 0;\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322143656-cz7vdhr",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322143656-cz7vdhr"
+			}
+		}
+	]
+}

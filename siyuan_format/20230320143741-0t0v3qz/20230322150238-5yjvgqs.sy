@@ -1,0 +1,60 @@
+{
+	"ID": "20230322150238-5yjvgqs",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322150238-5yjvgqs",
+		"title": "cudaError_t hgemm_blocksparse_nt_dds",
+		"updated": "20230322150306"
+	},
+	"Children": [
+		{
+			"ID": "20230322150300-dwrz8xm",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322150300-dwrz8xm",
+				"updated": "20230322150305"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "只有声明和调用，没有具体实现？？？"
+				}
+			]
+		},
+		{
+			"ID": "20230322150257-nrxsbn7",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322150257-nrxsbn7",
+				"updated": "20230322150258"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "cudaError_t hgemm_blocksparse_nt_dds(const ehalf* X, const ehalf* E, ehalf* U, bsmm_params* params);\ncudaError_t hgemm_blocksparse_nt_dds(const bhalf* X, const bhalf* E, bhalf* U, bsmm_params* params);\ncudaError_t hgemm_blocksparse_nt_dds(const float* X, const float* E, float* U, bsmm_params* params);\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322150306-p860b6e",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322150306-p860b6e"
+			}
+		}
+	]
+}

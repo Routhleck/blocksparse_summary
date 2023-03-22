@@ -5,9 +5,43 @@
 	"Properties": {
 		"id": "20230320162730-x792ajt",
 		"title": "void Compute",
-		"updated": "20230320162736"
+		"updated": "20230321171158"
 	},
 	"Children": [
+		{
+			"ID": "20230321171049-t17ev10",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321171049-t17ev10",
+				"updated": "20230321171158"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "实现了具体的计算逻辑\n调用 CUDA 函数"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230320151541-pbll6md",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "IdentityInitCK"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "来生成权重矩阵并将其存储在输出张量 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "w"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 中。"
+				}
+			]
+		},
 		{
 			"ID": "20230320162730-355el0v",
 			"Type": "NodeCodeBlock",
@@ -34,6 +68,13 @@
 					"Data": "```"
 				}
 			]
+		},
+		{
+			"ID": "20230321170927-mfmto1k",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321170927-mfmto1k"
+			}
 		}
 	]
 }

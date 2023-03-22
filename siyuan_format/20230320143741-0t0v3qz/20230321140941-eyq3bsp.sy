@@ -4,31 +4,49 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230321140941-eyq3bsp",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230321140941-91jwwhj\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230321140950-dve64j0\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230321140941-91jwwhj\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
 		"title": "class BlocksparseMatmulUpdat_CN",
-		"updated": "20230321140950"
+		"updated": "20230322150848"
 	},
 	"Children": [
 		{
-			"ID": "20230321140941-91jwwhj",
+			"ID": "20230322150848-uke9kn8",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321140941-91jwwhj",
-				"updated": "20230321140941"
-			}
+				"id": "20230322150848-uke9kn8",
+				"updated": "20230322150854"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "继承自父类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140826-hnotu2j",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "，并实现更新参数操作"
+				}
+			]
 		},
 		{
-			"ID": "20230321140944-4yrfzcb",
+			"ID": "20230322150848-oug527f",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321140944-4yrfzcb"
-			}
-		},
-		{
-			"ID": "20230321140944-eosfmd9",
-			"Type": "NodeParagraph",
-			"Properties": {
-				"id": "20230321140944-eosfmd9"
-			}
+				"id": "20230322150848-oug527f",
+				"updated": "20230322150848"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "基本与父类一致，仅仅实现了Compute函数"
+				}
+			]
 		},
 		{
 			"ID": "20230321140950-dve64j0",

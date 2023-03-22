@@ -1,0 +1,72 @@
+{
+	"ID": "20230322152116-2th17ol",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322152116-2th17ol",
+		"title": "Status Compute",
+		"updated": "20230322152133"
+	},
+	"Children": [
+		{
+			"ID": "20230322152120-9s2w5kz",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322152120-9s2w5kz",
+				"updated": "20230322152133"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "调用了父类中的 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230322143821-7uhp1vr",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "Xprop_Kernel"
+				},
+				{
+					"Type": "NodeText",
+					"Data": " 函数，用于执行反向传播操作的稀疏矩阵乘法。"
+				}
+			]
+		},
+		{
+			"ID": "20230322152121-4zuzv1r",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322152121-4zuzv1r",
+				"updated": "20230322152122"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "virtual Status Compute(const TA* A, const TB* B, TC* C)\n    {\n        return this-\u003eXprop_Kernel(A, B, C);\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322152116-h220mck",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322152116-h220mck",
+				"updated": "20230322152116"
+			}
+		}
+	]
+}

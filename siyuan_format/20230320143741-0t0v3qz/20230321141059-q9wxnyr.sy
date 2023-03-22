@@ -4,31 +4,101 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230321141059-q9wxnyr",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230321141059-oierpct\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230321141110-65ifq6h\u0026quot;,\u0026quot;scrollTop\u0026quot;:477,\u0026quot;focusId\u0026quot;:\u0026quot;20230321141059-oierpct\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
 		"title": "class BlocksparseMatmulUpdat_NC",
-		"updated": "20230321141110"
+		"updated": "20230322152306"
 	},
 	"Children": [
 		{
-			"ID": "20230321141059-oierpct",
+			"ID": "20230322152222-obqcm5l",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141059-oierpct",
-				"updated": "20230321141059"
-			}
+				"id": "20230322152222-obqcm5l",
+				"updated": "20230322152227"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "继承自父类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140954-ztknqm4",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul_NC"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "，并实现更新参数操作"
+				}
+			]
 		},
 		{
-			"ID": "20230321141109-bhxppq1",
+			"ID": "20230322152222-1k7k4wd",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141109-bhxppq1"
-			}
+				"id": "20230322152222-1k7k4wd",
+				"updated": "20230322152244"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "与父类基本一致，不同之处在于它的构造函数调用了父类的构造函数，并传递了参数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "\u0026quot;updat\u0026quot;"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​、"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "8"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "32"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，这些参数指定了稀疏矩阵乘法中使用的 CUDA kernel 的操作类型、深度和线程数。"
+				}
+			]
 		},
 		{
-			"ID": "20230321141109-qytlmcb",
+			"ID": "20230322152222-uyv9eqo",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141109-qytlmcb"
-			}
+				"id": "20230322152222-uyv9eqo",
+				"updated": "20230322152306"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "同时重写了"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230322152256-hvk1wmc",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "Compute"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "函数"
+				}
+			]
 		},
 		{
 			"ID": "20230321141110-65ifq6h",
@@ -36,7 +106,7 @@
 			"IsFencedCodeBlock": true,
 			"Properties": {
 				"id": "20230321141110-65ifq6h",
-				"updated": "20230321141110"
+				"updated": "20230322152215"
 			},
 			"Children": [
 				{

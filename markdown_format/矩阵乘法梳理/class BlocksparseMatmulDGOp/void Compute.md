@@ -1,10 +1,16 @@
 ---
 title: void Compute
 date: 2023-03-20T16:16:34Z
-lastmod: 2023-03-20T16:17:02Z
+lastmod: 2023-03-21T16:39:25Z
 ---
 
 # void Compute
+
+主要处理各种参数然后调用BlocksparseGateGrad来进行计算，主要是求出`dw_out`​和`dg`​
+
+​`dw_out`​的计算结果是**反向传播时的梯度值**，它的形状与输入的`dw`​一致，代表着原始输入的梯度信息。
+
+​`dg`​的计算结果是BlocksparseMatmul的**Gate（门控）的梯度值**，它的形状与输入的`g`​一致，代表着原始输入Gate的梯度信息。Gate的作用是控制前向传播中的哪些数据需要被过滤掉，因此它的梯度信息非常重要，可以帮助我们更好地训练模型。
 
 ```cpp
 void Compute(OpKernelContext* ctx) override

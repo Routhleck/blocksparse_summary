@@ -5,9 +5,23 @@
 	"Properties": {
 		"id": "20230320162715-4jn1e5i",
 		"title": "explicit BlocksparseMatmulIdentityInitOp",
-		"updated": "20230320162724"
+		"updated": "20230321170921"
 	},
 	"Children": [
+		{
+			"ID": "20230321170921-f2sxejn",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321170921-f2sxejn",
+				"updated": "20230321170921"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "从OpKernelConstruction中获取上下文对象ctx，并从输入参数中获取操作的一些属性"
+				}
+			]
+		},
 		{
 			"ID": "20230320162715-homarhf",
 			"Type": "NodeCodeBlock",

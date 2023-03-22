@@ -1,0 +1,133 @@
+{
+	"ID": "20230322145815-zuiyz7y",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322145815-zuiyz7y",
+		"title": "Status Compute",
+		"updated": "20230322150756"
+	},
+	"Children": [
+		{
+			"ID": "20230322145858-10ka2ai",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322145858-10ka2ai",
+				"updated": "20230322150030"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "参考如下判断流程根据tensorcores和Gate的值来分别调用不同的核函数"
+				}
+			]
+		},
+		{
+			"ID": "20230322150033-h2sm4oi",
+			"Type": "NodeBlockquote",
+			"Properties": {
+				"id": "20230322150033-h2sm4oi",
+				"updated": "20230322150503"
+			},
+			"Children": [
+				{
+					"Type": "NodeBlockquoteMarker",
+					"Data": "\u003e"
+				},
+				{
+					"ID": "20230322150034-bgzd0se",
+					"Type": "NodeParagraph",
+					"Properties": {
+						"id": "20230322150034-bgzd0se",
+						"updated": "20230322150354"
+					},
+					"Children": [
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230322150155-9c3rtcx",
+							"TextMarkBlockRefSubtype": "s",
+							"TextMarkTextContent": "hgemm_blocksparse_xn_sdd"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "\n"
+						},
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230320153549-pahtfsp",
+							"TextMarkBlockRefSubtype": "d",
+							"TextMarkTextContent": "cudaError_t BsmmXprop_CN"
+						},
+						{
+							"Type": "NodeText",
+							"Data": "\n"
+						},
+						{
+							"Type": "NodeTextMark",
+							"TextMarkType": "block-ref",
+							"TextMarkBlockRefID": "20230320154258-mitbaz1",
+							"TextMarkBlockRefSubtype": "d",
+							"TextMarkTextContent": "cudaError_t BsmmGatedXprop_CN"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230322150503-1bkm5q5",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322150503-1bkm5q5",
+				"updated": "20230322150659"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "bWluZG1hcA=="
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "- 判断tensorcores\n  - 有tensorcores\n    - hgemm_blocksparse_xn_sdd\n  - 无tensorcores\n    - Gate == NULL\n      - BsmmXprop_CN\n    - Gate != NULL\n      - BsmmGatedXprop_CN"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322145816-sks0f0q",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322145816-sks0f0q",
+				"updated": "20230322145852"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "virtual Status Compute(const TA* A, const TB* B, TC* C)\n    {\n        if (this-\u003emajor_ == 0)\n            GetCountSMsVersion(\u0026this-\u003emajor_, NULL);\n\n        cudaError_t res;\n        if (this-\u003emajor_ \u003e= 7 \u0026\u0026 std::is_same\u003cTA, ehalf\u003e::value)\n            res = hgemm_blocksparse_xn_sdd(A, B, C, this-\u003eparams_, 1);\n        else\n            if (this-\u003eparams_-\u003eGate == NULL)\n                res = BsmmXprop_CN\u003ctrue,VTYPE3(TA,TB,TC)\u003e(A, B, C, this-\u003eparams_);\n            else\n                res = BsmmGatedXprop_CN\u003ctrue,VTYPE3(TA,TB,TC)\u003e(A, B, C, this-\u003eparams_);\n\n        if (cudaSuccess != res)\n            return errors::Internal(cudaGetErrorString(res));\n        return Status::OK();\n    }\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

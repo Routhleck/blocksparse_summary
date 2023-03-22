@@ -1,0 +1,39 @@
+{
+	"ID": "20230322144315-e3rdzmn",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322144315-e3rdzmn",
+		"title": "Status Compute",
+		"updated": "20230322144321"
+	},
+	"Children": [
+		{
+			"ID": "20230322144315-xcdw0x7",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322144315-xcdw0x7",
+				"updated": "20230322144318"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "virtual Status Compute(const TA* A, const TB* B, TC* C) =0;\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

@@ -6,9 +6,59 @@
 		"id": "20230320151541-pbll6md",
 		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151549-mz672od\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151550-spbij9w\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151550-spbij9w\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
 		"title": "bool IdentityInitCK",
-		"updated": "20230320155227"
+		"updated": "20230321171427"
 	},
 	"Children": [
+		{
+			"ID": "20230321171426-2dpu70m",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321171426-2dpu70m",
+				"updated": "20230321171427"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "根据 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "bsize"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 的不同值调用不同的 CUDA 内核函数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "identity_init_CK"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，以生成不同大小的方阵权重矩阵。这些内核函数的具体实现是在另外的代码文件中定义的，例如 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "identity_init_CK\u0026lt;8,32\u0026gt;"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 表示调用模板函数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "identity_init_CK"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 生成大小为 8x8 的方阵权重矩阵，并且每个线程块（block）有 32 个线程。"
+				}
+			]
+		},
 		{
 			"ID": "20230320151549-mz672od",
 			"Type": "NodeCodeBlock",

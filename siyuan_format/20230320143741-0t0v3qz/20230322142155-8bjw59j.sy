@@ -1,0 +1,39 @@
+{
+	"ID": "20230322142155-8bjw59j",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322142155-8bjw59j",
+		"title": "Status GetKernel",
+		"updated": "20230322142201"
+	},
+	"Children": [
+		{
+			"ID": "20230322142157-bhqjlwj",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322142157-bhqjlwj",
+				"updated": "20230322142157"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "Status GetKernel(std::string\u0026 kernel_name, CUfunction* kernel)\n{\n  // Only need to get kernel once.\n  if (*kernel)\n    return Status::OK();\n\n  CUcontext context;\n  CUDA_CHECK( cuCtxGetCurrent(\u0026context) );\n\n  auto key = std::make_pair(context, kernel_name);\n\n  std::lock_guard\u003cstd::mutex\u003e lock(kernels_mutex_);\n\n  auto kernel_pair = kernels_.find(key);\n  if (kernel_pair != kernels_.end())\n  {\n    *kernel = kernel_pair-\u003esecond;\n    //printf(\"found:  %s\\n\", kernel_name.c_str());\n  }\n  else\n  {\n    CUdevice device;\n    CUmodule module;\n    int major;\n\n    auto kernel_data_pair = kernel_map_.find(kernel_name);\n    if (kernel_data_pair == kernel_map_.end())\n    {\n      std::string errstr = kernel_name + \" not availble.\";\n      return errors::Internal(errstr.c_str());\n    }\n\n    const uint8_t* kernel_data_src = kernel_data_pair-\u003esecond.first;\n    size_t kernel_data_size        = kernel_data_pair-\u003esecond.second;\n\n    uint8_t* kernel_data = (uint8_t*)malloc(kernel_data_size);\n    memcpy(kernel_data, kernel_data_src, kernel_data_size);\n\n    CUDA_CHECK( cuCtxGetDevice(\u0026device) );\n    CUDA_CHECK( cuDeviceGetAttribute(\u0026major, CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MAJOR, device) );\n\n    if (major == 6)\n    {\n      // SM 50 and 60 cubins are identical except for these bytes in the elf header flags\n      kernel_data[48] = 60;\n      kernel_data[49] = 13;\n      kernel_data[50] = 60;\n    }\n    CUDA_CHECK( cuModuleLoadData(\u0026module, kernel_data) );\n    CUDA_CHECK( cuModuleGetFunction(kernel, module, kernel_name.c_str()) );\n\n    free(kernel_data);\n\n    kernels_.insert(std::make_pair(key, *kernel));\n    //printf(\"insert: %s\\n\", kernel_name.c_str());\n\n  }\n  return Status::OK();\n}\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		}
+	]
+}

@@ -5,30 +5,47 @@
 	"Properties": {
 		"id": "20230321140914-od8tb6d",
 		"title": "class BlocksparseMatmulBprop_CN",
-		"updated": "20230321140929"
+		"updated": "20230322150733"
 	},
 	"Children": [
 		{
-			"ID": "20230321140914-5tr67da",
+			"ID": "20230322150733-qv03d80",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321140914-5tr67da",
-				"updated": "20230321140914"
-			}
+				"id": "20230322150733-qv03d80",
+				"updated": "20230322150736"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "继承自父类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140826-hnotu2j",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "，并实现反向传播操作"
+				}
+			]
 		},
 		{
-			"ID": "20230321140929-w086e90",
+			"ID": "20230322150733-b7pn4f6",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321140929-w086e90"
-			}
-		},
-		{
-			"ID": "20230321140929-yng2ysw",
-			"Type": "NodeParagraph",
-			"Properties": {
-				"id": "20230321140929-yng2ysw"
-			}
+				"id": "20230322150733-b7pn4f6",
+				"updated": "20230322150733"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "基本与父类一致，仅仅实现了Compute函数"
+				}
+			]
 		},
 		{
 			"ID": "20230321140929-642ym5t",

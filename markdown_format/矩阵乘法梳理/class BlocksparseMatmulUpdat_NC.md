@@ -1,16 +1,16 @@
 ---
 title: class BlocksparseMatmulUpdat_NC
 date: 2023-03-21T14:10:59Z
-lastmod: 2023-03-21T14:11:10Z
+lastmod: 2023-03-22T15:23:06Z
 ---
 
 # class BlocksparseMatmulUpdat_NC
 
-‍
+继承自父类BlocksparseMatmul_NC，并实现更新参数操作
 
-‍
+与父类基本一致，不同之处在于它的构造函数调用了父类的构造函数，并传递了参数 `"updat"`​、`8`​ 和 `32`​，这些参数指定了稀疏矩阵乘法中使用的 CUDA kernel 的操作类型、深度和线程数。
 
-‍
+同时重写了Compute函数
 
 ```cpp
 template <CTYPE3(TA,TB,TC)>

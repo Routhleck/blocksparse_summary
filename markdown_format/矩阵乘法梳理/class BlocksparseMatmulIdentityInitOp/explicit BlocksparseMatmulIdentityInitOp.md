@@ -1,10 +1,12 @@
 ---
 title: explicit BlocksparseMatmulIdentityInitOp
 date: 2023-03-20T16:27:15Z
-lastmod: 2023-03-20T16:27:24Z
+lastmod: 2023-03-21T17:09:21Z
 ---
 
 # explicit BlocksparseMatmulIdentityInitOp
+
+从OpKernelConstruction中获取上下文对象ctx，并从输入参数中获取操作的一些属性
 
 ```cpp
 explicit BlocksparseMatmulIdentityInitOp(OpKernelConstruction* ctx) : OpKernel(ctx) {

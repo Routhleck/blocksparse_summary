@@ -1,0 +1,356 @@
+{
+	"ID": "20230322113616-wmg2hj1",
+	"Spec": "1",
+	"Type": "NodeDocument",
+	"Properties": {
+		"id": "20230322113616-wmg2hj1",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230322113616-9ggn4ka\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230322113649-ruwwpo7\u0026quot;,\u0026quot;scrollTop\u0026quot;:53,\u0026quot;focusId\u0026quot;:\u0026quot;20230322113649-ruwwpo7\u0026quot;,\u0026quot;focusStart\u0026quot;:0,\u0026quot;focusEnd\u0026quot;:0}",
+		"title": "Status Compute",
+		"updated": "20230322145834"
+	},
+	"Children": [
+		{
+			"ID": "20230322113616-9ggn4ka",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322113616-9ggn4ka",
+				"updated": "20230322113625"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "虚函数"
+				}
+			]
+		},
+		{
+			"ID": "20230322144902-ra96wzr",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230322144902-ra96wzr",
+				"updated": "20230322145233"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "输入参数"
+				}
+			]
+		},
+		{
+			"ID": "20230322145129-0mbjm9i",
+			"Type": "NodeTable",
+			"TableAligns": [
+				0,
+				0,
+				0
+			],
+			"Properties": {
+				"colgroup": "||",
+				"id": "20230322145129-0mbjm9i",
+				"updated": "20230322145145"
+			},
+			"Children": [
+				{
+					"Type": "NodeTableHead",
+					"Data": "thead",
+					"Children": [
+						{
+							"Type": "NodeTableRow",
+							"Data": "tr",
+							"Children": [
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "参数"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "类型"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "说明"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​​const TA* A​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​const​指针"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "稀疏矩阵 A 中的元素数组"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​​const TB* B​"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "​​const​指针"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "稀疏矩阵 B 中的元素数组"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230322145246-l6xm5i3",
+			"Type": "NodeHeading",
+			"HeadingLevel": 1,
+			"Properties": {
+				"id": "20230322145246-l6xm5i3",
+				"updated": "20230322145248"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "输出参数"
+				}
+			]
+		},
+		{
+			"ID": "20230322145243-ko33frs",
+			"Type": "NodeTable",
+			"TableAligns": [
+				0,
+				0,
+				0
+			],
+			"Properties": {
+				"colgroup": "||",
+				"id": "20230322145243-ko33frs",
+				"updated": "20230322145243"
+			},
+			"Children": [
+				{
+					"Type": "NodeTableHead",
+					"Data": "thead",
+					"Children": [
+						{
+							"Type": "NodeTableRow",
+							"Data": "tr",
+							"Children": [
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "参数"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "类型"
+										}
+									]
+								},
+								{
+									"Type": "NodeTableCell",
+									"Data": "th",
+									"Children": [
+										{
+											"Type": "NodeText",
+											"Data": "说明"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Type": "NodeTableRow",
+					"Data": "tr",
+					"Children": [
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "TC* C"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "指针"
+								}
+							]
+						},
+						{
+							"Type": "NodeTableCell",
+							"Data": "td",
+							"Children": [
+								{
+									"Type": "NodeText",
+									"Data": "稀疏矩阵 C 中的元素数组"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "20230322145157-c5kiiza",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322145157-c5kiiza",
+				"updated": "20230322145214"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "矩阵乘法"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "A"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​x"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "B"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​="
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "C"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​"
+				}
+			]
+		},
+		{
+			"ID": "20230322113645-pzyahah",
+			"Type": "NodeCodeBlock",
+			"IsFencedCodeBlock": true,
+			"Properties": {
+				"id": "20230322113645-pzyahah",
+				"updated": "20230322113648"
+			},
+			"Children": [
+				{
+					"Type": "NodeCodeBlockFenceOpenMarker",
+					"Data": "```"
+				},
+				{
+					"Type": "NodeCodeBlockFenceInfoMarker",
+					"CodeBlockInfo": "Y3Bw"
+				},
+				{
+					"Type": "NodeCodeBlockCode",
+					"Data": "virtual Status Compute(const TA* A, const TB* B, TC* C) =0;\n"
+				},
+				{
+					"Type": "NodeCodeBlockFenceCloseMarker",
+					"Data": "```"
+				}
+			]
+		},
+		{
+			"ID": "20230322113649-ruwwpo7",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230322113649-ruwwpo7"
+			}
+		}
+	]
+}

@@ -5,30 +5,88 @@
 	"Properties": {
 		"id": "20230321141043-515n3zl",
 		"title": "class BlocksparseMatmulBprop_NC",
-		"updated": "20230321141052"
+		"updated": "20230322152201"
 	},
 	"Children": [
 		{
-			"ID": "20230321141043-7ruectf",
+			"ID": "20230322152005-chh63e3",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141043-7ruectf",
-				"updated": "20230321141043"
-			}
+				"id": "20230322152005-chh63e3",
+				"updated": "20230322152005"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "继承自父类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140954-ztknqm4",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul_NC"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "，并实现向前传播操作"
+				}
+			]
 		},
 		{
-			"ID": "20230321141051-ncfe4an",
+			"ID": "20230322152005-8ct198u",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141051-ncfe4an"
-			}
+				"id": "20230322152005-8ct198u",
+				"updated": "20230322152201"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "与父类基本一致，不同之处在于它的构造函数调用了父类的构造函数，并传递了参数 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "\u0026quot;bprop\u0026quot;"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​、"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "32"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​ 和 "
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "code",
+					"TextMarkTextContent": "128"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "​，这些参数指定了稀疏矩阵乘法中使用的 CUDA kernel 的操作类型、深度和线程数。"
+				}
+			]
 		},
 		{
-			"ID": "20230321141051-do3dng9",
+			"ID": "20230322152005-eowbegh",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321141051-do3dng9"
-			}
+				"id": "20230322152005-eowbegh",
+				"updated": "20230322152005"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "同时重写了Compute函数"
+				}
+			]
 		},
 		{
 			"ID": "20230321141052-z251c95",

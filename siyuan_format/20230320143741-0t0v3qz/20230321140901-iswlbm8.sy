@@ -4,8 +4,9 @@
 	"Type": "NodeDocument",
 	"Properties": {
 		"id": "20230321140901-iswlbm8",
+		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230321140901-vyj8esa\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230321140911-3j513vz\u0026quot;,\u0026quot;scrollTop\u0026quot;:0,\u0026quot;focusId\u0026quot;:\u0026quot;20230321140903-d7rh72k\u0026quot;,\u0026quot;focusStart\u0026quot;:10,\u0026quot;focusEnd\u0026quot;:10}",
 		"title": "class BlocksparseMatmulFprop_CN",
-		"updated": "20230321140911"
+		"updated": "20230322145814"
 	},
 	"Children": [
 		{
@@ -13,15 +14,39 @@
 			"Type": "NodeParagraph",
 			"Properties": {
 				"id": "20230321140901-vyj8esa",
-				"updated": "20230321140901"
-			}
+				"updated": "20230322144507"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "继承自父类"
+				},
+				{
+					"Type": "NodeTextMark",
+					"TextMarkType": "block-ref",
+					"TextMarkBlockRefID": "20230321140826-hnotu2j",
+					"TextMarkBlockRefSubtype": "s",
+					"TextMarkTextContent": "BlocksparseMatmul"
+				},
+				{
+					"Type": "NodeText",
+					"Data": "，并实现前向传播操作"
+				}
+			]
 		},
 		{
 			"ID": "20230321140903-d7rh72k",
 			"Type": "NodeParagraph",
 			"Properties": {
-				"id": "20230321140903-d7rh72k"
-			}
+				"id": "20230321140903-d7rh72k",
+				"updated": "20230322145814"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "基本与父类一致，仅仅实现了Compute函数"
+				}
+			]
 		},
 		{
 			"ID": "20230321140911-3j513vz",

@@ -6,9 +6,23 @@
 		"id": "20230320151402-tnz3k5n",
 		"scroll": "{\u0026quot;startId\u0026quot;:\u0026quot;20230320151515-9bxu1kt\u0026quot;,\u0026quot;endId\u0026quot;:\u0026quot;20230320151516-gnbv2mm\u0026quot;,\u0026quot;scrollTop\u0026quot;:295,\u0026quot;focusId\u0026quot;:\u0026quot;20230320151515-9bxu1kt\u0026quot;,\u0026quot;focusStart\u0026quot;:931,\u0026quot;focusEnd\u0026quot;:931}",
 		"title": "class BlocksparseMatmulDGOp",
-		"updated": "20230320163257"
+		"updated": "20230322145658"
 	},
 	"Children": [
+		{
+			"ID": "20230321170039-ght9zy2",
+			"Type": "NodeParagraph",
+			"Properties": {
+				"id": "20230321170039-ght9zy2",
+				"updated": "20230321170150"
+			},
+			"Children": [
+				{
+					"Type": "NodeText",
+					"Data": "实现反向传播操作，计算某个神经网络层的权重矩阵和梯度的矩阵乘法，以及相应的梯度计算"
+				}
+			]
+		},
 		{
 			"ID": "20230320160719-iiq4at7",
 			"Type": "NodeHeading",
@@ -195,7 +209,7 @@
 			"Properties": {
 				"colgroup": "||",
 				"id": "20230320161553-q5zfl0l",
-				"updated": "20230320161616"
+				"updated": "20230322145658"
 			},
 			"Children": [
 				{
@@ -250,16 +264,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "dw_out"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​dw_out​​"
 								}
 							]
 						},
@@ -295,16 +300,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "dg"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​​dg​​"
 								}
 							]
 						},
@@ -340,16 +336,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "dw"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​dw​​"
 								}
 							]
 						},
@@ -385,16 +372,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "w"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​w​​"
 								}
 							]
 						},
@@ -430,16 +408,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "g"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​g​​"
 								}
 							]
 						},
@@ -475,16 +444,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "stream"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​stream​​"
 								}
 							]
 						},
@@ -520,16 +480,7 @@
 							"Children": [
 								{
 									"Type": "NodeText",
-									"Data": "​"
-								},
-								{
-									"Type": "NodeTextMark",
-									"TextMarkType": "code",
-									"TextMarkTextContent": "BlocksparseGateGrad"
-								},
-								{
-									"Type": "NodeText",
-									"Data": "​"
+									"Data": "​BlocksparseGateGrad​​"
 								}
 							]
 						},

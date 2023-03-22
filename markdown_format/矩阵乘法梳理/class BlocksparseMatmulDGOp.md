@@ -1,10 +1,12 @@
 ---
 title: class BlocksparseMatmulDGOp
 date: 2023-03-20T15:14:02Z
-lastmod: 2023-03-20T16:32:57Z
+lastmod: 2023-03-22T14:56:58Z
 ---
 
 # class BlocksparseMatmulDGOp
+
+实现反向传播操作，计算某个神经网络层的权重矩阵和梯度的矩阵乘法，以及相应的梯度计算
 
 # 成员方法
 
@@ -16,14 +18,14 @@ lastmod: 2023-03-20T16:32:57Z
 # 成员变量
 
 |成员变量|变量类型|说明|
-| ----------| ---------------| ------------------------------|
-|​`dw_out`​|Tensor*|分配输出张量，梯度值的张量|
-|​`dg`​|Tensor*|分配输出张量，门控梯度的张量|
-|​`dw`​|const Tensor&|输入张量，权重梯度的张量|
-|​`w`​|const Tensor&|输入张量，权重的张量|
-|​`g`​|const Tensor&|输入张量，门控的张量|
-|​`stream`​|CUstream|计算所在的 CUDA 流|
-|​`BlocksparseGateGrad`​|void|计算门控梯度和梯度值|
+| ---------------------------| ---------------| ------------------------------|
+|​dw_out​​|Tensor*|分配输出张量，梯度值的张量|
+|​​dg​​|Tensor*|分配输出张量，门控梯度的张量|
+|​dw​​|const Tensor&|输入张量，权重梯度的张量|
+|​w​​|const Tensor&|输入张量，权重的张量|
+|​g​​|const Tensor&|输入张量，门控的张量|
+|​stream​​|CUstream|计算所在的 CUDA 流|
+|​BlocksparseGateGrad​​|void|计算门控梯度和梯度值|
 
 # 具体代码
 
